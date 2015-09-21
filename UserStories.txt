@@ -1,7 +1,15 @@
 As a player, I want to register with a league online, so that I can play NOW!
 As a player, I want to upload a picture, so that refs know my face
-As a player, I want to register with a team, so that I can be counted amongst them  As a ref, I want to view player pictures, so that I can confirm registration
+As a player, I want to register with a team, so that I can be counted amongst them  
+As a ref, I want to view player pictures, so that I can confirm registration
 As a ref, I want a team player list, so that I know a player is registered with the team
 As a ref, I want to flag player for disciplinary action, so we can weed out the bad ones
 As a league, I want to accept registration payment, so that I can let player play As a league, I want to create referee accounts, so I can have officials As a league, I want to suspend, reinstate and terminate player registration, so I don’t get sued
 As a league, I want an account so that I can use the app  As a manager, I want to pay some/all of the team fee
+
+
+As a contactable, I need to know my address, city, state, zip and phone_number and email, so I be contacted
+As a contactable, I need to know my emergency_contact # so that I can be taken care of if I get hurt
+As a contactable, I need be able to be emailed with a background job (sidekiq) so that I can be emailed without bogging down the server
+As a contactable, I want to be called from the phone so that people can get a hold of me
+
