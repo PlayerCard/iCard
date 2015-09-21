@@ -1,49 +1,0 @@
-As a player, I want to register with a league online, so that I can play NOW!
-As a player, I want to upload a picture, so that refs know my face
-As a player, I want to upload contact information, so that I can be contacted for information
-As a player, I want to register with a team, so that I can be counted amongst them  
-As a ref, I want to register with a league, so I can do my job
-
-As a player, I want to be able to contact a team to ask to be added to the roster
-As a player, I want to see my discipline information
-As a player, I want to be able to request team registration
-As a player, I want to be contactable
-As a player, I want to see my discipline information and cards
-As a player, I want to be able to contact the league regarding a disciplinary issue
-As a player, I want to be able to see if I'm eligible to play
-As a player, I want to see the card issue dates
-
-As a player, I want to request to join a team, so I can be added to a permanent roster
-
-As a ref, I want to register with a league, so I can do my job
-As a ref, I want to add my contact information, so that I can be contacted and payed
-As a ref, I want to view player pictures, so that I can confirm their registration
-As a ref, I want to flag player for disciplinary action, so we can weed out the bad ones
-As a ref, I want to view todays game, so that I have quick access to team line-ups
-As a ref, I want to enter the game score, so that the game is properly recorded
-
-As a league manager, I want to add teams so that I can manage the season schedule
-As a league manager, I want to edit my disciplinary policy, so that players are properly punished
-As a league manager, I want to suspend, reinstate and terminate player registration, so I don’t get sued
-As a league manager, I want to accept registration payment, so that I can let players play 
-As a league manager, I want to create referee accounts, so I can have officials 
-As a league manager, I want an account so that I can use the app  
-As a league manager, I want to set custom enrollment fees, so that I can get paid
-As a league manager, I want to track referee accounts, so games can be officiated
-As a league manager, I want to track teams, so that I know which teams are a league
-As a league manager, I want to set disciplinary policy, so that naughty players must observe their suspensions
-As a league manager, I want to keep track of a season start date, so that discipline is relative to a season period
-As a league manager, I want to set games, so that refs and teams have central place to share information on game day
-As a league manager, I want to add a team, so that I can have a league
-As a league manager, I want to see referee comments that pertain to a specific instance of a player violating rules.
-As a league manager, I want to see the card issue dates
-As a league manager, I want to detect the amount and type of cards the receiving player has already accrued, in order to flag them for disciplinary action, if necessary.
-As a league manager, I want to track the referee who issued cards.
-
-As a team manager, I want to have a roster, so that I can see my usual players
-As a team manager, I want to have a lineup, to present to the ref
-As a team manager, I want to contact players on my roster, so that I can know who will be at a game
-As a team manager, I want to change who is team manager, so that I can go on vaction
-As a team manager, I want to see my player discipline info, so I know who to play
-As a team manager, I want to pay some/all of the team fee, so my team can play
-As a team manager, I want to accept player requests, so I can fill out my team roster
