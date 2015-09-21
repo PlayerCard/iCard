@@ -5,3 +5,8 @@ As a ref, I want a team player list, so that I know a player is registered with 
 As a ref, I want to flag player for disciplinary action, so we can weed out the bad ones
 As a league, I want to accept registration payment, so that I can let player play As a league, I want to create referee accounts, so I can have officials As a league, I want to suspend, reinstate and terminate player registration, so I don’t get sued
 As a league, I want an account so that I can use the app  As a manager, I want to pay some/all of the team fee
+As a team manager, I want to have a roster, so that I can see my usual players
+As a team manager, I want to have a lineup, to present to the ref
+As a team manager, I want to contact players on my roster, so that I can know who will be at a game
+As a team manager, I want to change who is team manager, so that I can go on vaction
+As a team manager, I want to see my player discipline info, so I know who to play
