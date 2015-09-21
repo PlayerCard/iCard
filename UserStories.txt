@@ -1,7 +1,19 @@
 As a player, I want to register with a league online, so that I can play NOW!
+As a player, I want to request to join a team, so I can be added to a permanent roster
 As a player, I want to upload a picture, so that refs know my face
-As a player, I want to register with a team, so that I can be counted amongst them  As a ref, I want to view player pictures, so that I can confirm registration
-As a ref, I want a team player list, so that I know a player is registered with the team
+As a player, I want to upload contact information, so that I can be contacted for information
+As a player, I want to register with a team, so that I can be counted amongst them  
+As a ref, I want to register with a league, so I can do my job
+As a ref, I want to add my contact information, so that I can be contacted and payed
+As a ref, I want to view player pictures, so that I can confirm their registration
 As a ref, I want to flag player for disciplinary action, so we can weed out the bad ones
-As a league, I want to accept registration payment, so that I can let player play As a league, I want to create referee accounts, so I can have officials As a league, I want to suspend, reinstate and terminate player registration, so I don’t get sued
-As a league, I want an account so that I can use the app  As a manager, I want to pay some/all of the team fee
+As a ref, I want to view todays game, so that I have quick access to team line-ups
+As a ref, I want to enter the game score, so that the game is properly recorded
+As a league, I want to add teams so that I can manage the season schedule
+As a league, I want to edit my disciplinary policy, so that players are properly punished
+As a league, I want to accept registration payment, so that I can let players play 
+As a league, I want to create referee accounts, so I can have officials 
+As a league, I want to suspend, reinstate and terminate player registration, so I don’t get sued
+As a league, I want an account so that I can use the app  
+As a manager, I want to pay some/all of the team fee, so my team can play
+As a manager, I want to accept player requests, so I can fill out my team roster
