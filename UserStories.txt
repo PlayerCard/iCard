@@ -7,8 +7,8 @@ As a league, I want to accept registration payment, so that I can let player pla
 As a league, I want an account so that I can use the app  As a manager, I want to pay some/all of the team fee
 
 Card
-As a card, I want to keep track of my colors.
+As a card, I want to keep track of my colors, so that I know what level of rule violation the player committed.
 As a card, I want to store referee comments that pertain to a specific instance of a player violating rules. 
 As a card, I want to store the date I was issued, so that I know when to expire.
 As a card, I want to detect the amount and type of cards the receiving player has already accrued, in order to flag them for disciplinary action, if necessary.
-As I card, I want to track of the referee who issued me.
+As a card, I want to track the referee who issued me.
