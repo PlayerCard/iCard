@@ -4,7 +4,7 @@ As a player, I want to upload a picture, so that refs know my face
 <<<<<<< HEAD
 As a player, I want to upload contact information, so that I can be contacted for information
 As a player, I want to register with a team, so that I can be counted amongst them  
-As a ref, I want to register with a league, so I can do my job
+As a ref, I want to register with a leag  ue, so I can do my job
 As a ref, I want to add my contact information, so that I can be contacted and payed
 As a ref, I want to view player pictures, so that I can confirm their registration
 As a ref, I want to flag player for disciplinary action, so we can weed out the bad ones
