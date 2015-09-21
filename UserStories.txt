@@ -1,7 +1,27 @@
 As a player, I want to register with a league online, so that I can play NOW!
 As a player, I want to upload a picture, so that refs know my face
-As a player, I want to register with a team, so that I can be counted amongst them  As a ref, I want to view player pictures, so that I can confirm registration
+As a player, I want to register with a team, so that I can be counted
+amongst them
+
+As a ref, I want to view player pictures, so that I can confirm registration
 As a ref, I want a team player list, so that I know a player is registered with the team
 As a ref, I want to flag player for disciplinary action, so we can weed out the bad ones
-As a league, I want to accept registration payment, so that I can let player play As a league, I want to create referee accounts, so I can have officials As a league, I want to suspend, reinstate and terminate player registration, so I don’t get sued
-As a league, I want an account so that I can use the app  As a manager, I want to pay some/all of the team fee
+
+As a league, I want an account so that I can use the app
+As a league, I want to set custom enrollment fees, so that I can get paid
+As a league, I want to accept registration payment, so that I can let
+players play
+As a league, I want to track referee accounts, so games can be officiated
+As a league, I want to track teams, so that I know which teams are a league
+As a league, I want to set disciplinary policy, so that naughty
+players must observe their suspensions
+As a league, I want to keep track of a season start date, so that
+discipline is relative to a season period
+As a league, I want to set games, so that refs and teams have central
+place to share information on game day
+
+
+As a manager, I want to pay some/all of the team fee
+
+As a developer, I want a test framework setup, so that I know my code is in good
+shape.
