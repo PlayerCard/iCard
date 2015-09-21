@@ -6,3 +6,35 @@ As a player, I want to be able to contact the league regarding a disciplinary is
 As a player, I want to be able to see if I'm eligible to play
 As a player, I want to be contactable
 
+As a ref, I want to view player pictures, so that I can confirm registration
+As a ref, I want a team player list, so that I know a player is registered with the team
+As a ref, I want to flag player for disciplinary action, so we can weed out the bad ones
+
+As a league, I want an account so that I can use the app
+As a league, I want to set custom enrollment fees, so that I can get paid
+As a league, I want to accept registration payment, so that I can let
+players play
+As a league, I want to track referee accounts, so games can be officiated
+As a league, I want to track teams, so that I know which teams are a league
+As a league, I want to set disciplinary policy, so that naughty
+players must observe their suspensions
+As a league, I want to keep track of a season start date, so that
+discipline is relative to a season period
+As a league, I want to set games, so that refs and teams have central
+place to share information on game day
+
+As a player, I want to register with a team, so that I can be counted amongst them  
+As a ref, I want to view player pictures, so that I can confirm registration
+As a ref, I want a team player list, so that I know a player is registered with the team
+As a ref, I want to flag player for disciplinary action, so we can weed out the bad ones
+As a league, I want to accept registration payment, so that I can let player play As a league, I want to create referee accounts, so I can have officials As a league, I want to suspend, reinstate and terminate player registration, so I don’t get sued
+As a league, I want an account so that I can use the app  As a manager, I want to pay some/all of the team fee
+As a team manager, I want to have a roster, so that I can see my usual players
+As a team manager, I want to have a lineup, to present to the ref
+As a team manager, I want to contact players on my roster, so that I can know who will be at a game
+As a team manager, I want to change who is team manager, so that I can go on vaction
+As a team manager, I want to see my player discipline info, so I know who to play
+As a contactable, I need to know my address, city, state, zip and phone_number and email, so I be contacted
+As a contactable, I need to know my emergency_contact # so that I can be taken care of if I get hurt
+As a contactable, I need be able to be emailed with a background job (sidekiq) so that I can be emailed without bogging down the server
+As a contactable, I want to be called from the phone so that people can get a hold of me
