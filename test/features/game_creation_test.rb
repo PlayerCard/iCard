@@ -17,7 +17,7 @@ feature "Creating Gamess" do
   end
 
   scenario "Can't create games with incomplete form" do
-    login(:referee)
+    login(:admin)
     visit league_path[:id = 1]
 
     click_on "Create Game"
