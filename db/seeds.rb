@@ -39,15 +39,15 @@ refs = []
 5.times do
   name = Faker::Name.name
   email = Faker::Internet.email(name)
-  user = User.create!( name: name,
-                      email: email,
-                   password: "password",
-      password_confirmation: "password",
-                  address_1: Faker::Address.street_address,
-                  address_2: Faker::Address.secondary_address,
-                       city: Faker::Address.city,
-                      state: Faker::Address.state_abbr,
-                        zip: Faker::Address.zip )
+  user = User.create!( name:                  name,
+                       email:                 email,
+                       password:              "password",
+                       password_confirmation: "password",
+                       address_1:             Faker::Address.street_address,
+                       address_2:             Faker::Address.secondary_address,
+                       city:                  Faker::Address.city,
+                       state:                 Faker::Address.state_abbr,
+                       zip:                   Faker::Address.zip )
   ref = Profile.create!( picture_url: Faker::Avatar.image, role: "referee" )
   refs << ref
 end
