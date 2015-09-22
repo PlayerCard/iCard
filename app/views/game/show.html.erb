@@ -1,0 +1,15 @@
+<p>
+  <b>Game:</b>
+  <%= @game.away.name %> @ <%= @game.home.name %>
+  <%= @game.game_location %>
+  <%= @game.game_time %>
+  <%= @game.referee.name %>
+</p>
+
+<td><%= link_to @game.away.name, team_path(@game.away.team.id) %></td> | @ |
+<td><%= link_to @game.home.name, team_path(@game.home.team.id)%></td>
+
+<p>
+   Put the line-ups here
+</p>
+

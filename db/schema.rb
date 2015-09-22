@@ -13,6 +13,30 @@
 
 ActiveRecord::Schema.define(version: 20150922194307) do
 
+  create_table "cards", force: :cascade do |t|
+    t.string   "color",      default: "Yellow", null: false
+    t.string   "comments"
+    t.integer  "player_id",                     null: false
+    t.integer  "game_id",                       null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "cards", ["game_id"], name: "index_cards_on_game_id"
+  add_index "cards", ["player_id"], name: "index_cards_on_player_id"
+
+  create_table "games", force: :cascade do |t|
+    t.integer  "home_team",     null: false
+    t.integer  "away_team",     null: false
+    t.date     "game_time"
+    t.string   "game_location"
+    t.integer  "referee",       null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "games", ["referee"], name: "index_games_on_referee"
+
   create_table "leagues", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false

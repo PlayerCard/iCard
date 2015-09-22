@@ -1,0 +1,16 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  home_team: 
+  away_team: 
+  game_time: 
+  game_location: 
+  referee: 1
+
+two:
+  home_team: 
+  away_team: 
+  game_time: 
+  game_location: 
+  referee: 1
