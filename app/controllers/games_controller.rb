@@ -3,8 +3,7 @@ class GamesController < ApplicationController
   before_action :set_league, only: []
 
   def create
-    @game = Game.new(params.require(:game).permit(:team, :team, :game_time, :game_location, :ref))
-
+    @game = Game.new(game_params)
     respond_to do |format|
       if @game.save
         format.html { redirect_to @game, notice: 'Game was successfully created.' }

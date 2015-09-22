@@ -2,6 +2,7 @@ class CardsController < ApplicationController
   before_action :set_game_and_user, only: []
 
   def create
+    @card = Card.new(card_params)
     respond_to do |format|
       if @card.save
         format.html { redirect_to @card, notice: 'Card was successfully created.' }
