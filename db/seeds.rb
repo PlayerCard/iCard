@@ -42,12 +42,12 @@ refs = []
 end
 
 # # seed db with teams and managers, users must be created first
-teams = []
+# teams = []
 
-(0..9).each do |num|
-  manager = User.find(num)
-  team = Team.create!( name: Faker::Team.creature )
-  team_with_manager = team.teamPlayer.create!( manager: true )
-end
+# (0..9).each do |num|
+#   manager = User.find(num)
+#   team = Team.create!( name: Faker::Team.creature )
+#   team_with_manager = team.teamPlayer.create!( manager: true )
+# end
 
 
