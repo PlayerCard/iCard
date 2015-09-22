@@ -19,6 +19,19 @@ ActiveRecord::Schema.define(version: 20150921220747) do
     t.datetime "updated_at", null: false
   end
 
+ActiveRecord::Schema.define(version: 20150921234523) do
+
+  create_table "profiles", force: :cascade do |t|
+    t.string   "picture_url"
+    t.string   "role",        default: "player", null: false
+    t.integer  "user_id"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
+  add_index "profiles", ["role"], name: "index_profiles_on_role"
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -31,6 +44,11 @@ ActiveRecord::Schema.define(version: 20150921220747) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "name"
+    t.string   "address_1"
+    t.string   "address_2"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
