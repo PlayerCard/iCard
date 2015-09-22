@@ -1,0 +1,14 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  color: 
+  comments: 
+  player_id: 
+  game_id: 1
+
+two:
+  color: 
+  comments: 
+  player_id: 
+  game_id: 1
