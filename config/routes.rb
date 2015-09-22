@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   resources :profiles
   devise_for :users
-  root 'welcome#index'
+  root 'static_pages#index'
 end
