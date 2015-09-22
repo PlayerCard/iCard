@@ -5,7 +5,7 @@ league = League.create( name: "Super Rad Soccer League")
 # Create players
 players = []
 
-50.times do
+200.times do
   name = Faker::Name.name
   email = Faker::Internet.email(name)
   user = User.create!( name: name,
@@ -17,12 +17,12 @@ players = []
                        city: Faker::Address.city,
                       state: Faker::Address.state_abbr,
                         zip: Faker::Address.zip )
-  player = user.profile.create!( picture_url: Faker::Avatar.image,
+  player = Profile.create!( user: user, picture_url: Faker::Avatar.image,
                                         role: "player" )
   players << player
 end
 
-# Create refs
+# # Create refs
 refs = []
 
 5.times do
@@ -36,13 +36,12 @@ refs = []
                   address_2: Faker::Address.secondary_address,
                        city: Faker::Address.city,
                       state: Faker::Address.state_abbr,
-                        zip: Faker::Address.zip,
-                    picture: Faker::Avatar.image )
-  ref = user.profile.create!( picture_url: picture, role: role )
+                        zip: Faker::Address.zip )
+  ref = Profile.create!( picture_url: Faker::Avatar.image, role: "referee" )
   refs << ref
 end
 
-# seed db with teams and managers, users must be created first
+# # seed db with teams and managers, users must be created first
 teams = []
 
 (0..9).each do |num|
@@ -50,3 +49,5 @@ teams = []
   team = Team.create!( name: Faker::Team.creature )
   team_with_manager = team.teamPlayer.create!( manager: true )
 end
+
+
