@@ -11,18 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150921234523) do
+ActiveRecord::Schema.define(version: 20150922002945) do
 
-  create_table "profiles", force: :cascade do |t|
-    t.string   "picture_url"
-    t.string   "role",        default: "player", null: false
-    t.integer  "user_id"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+  create_table "player_teams", force: :cascade do |t|
+    t.integer "player_id_id"
+    t.integer "team_id_id"
+    t.boolean "manager"
+    t.boolean "in_line_up"
   end
 
-  add_index "profiles", ["role"], name: "index_profiles_on_role"
-  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
+  add_index "player_teams", ["player_id_id"], name: "index_player_teams_on_player_id_id"
+  add_index "player_teams", ["team_id_id"], name: "index_player_teams_on_team_id_id"
+
+  create_table "teams", force: :cascade do |t|
+    t.string "name"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
