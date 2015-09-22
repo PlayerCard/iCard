@@ -1,9 +1,9 @@
 class Team < ActiveRecord::Base
-  has_many :players, through: :team_player
-  has_many :team_players
+  has_many :players, through: :player_team
+  has_many :player_teams
 
   def managers
-    team_players.where(manager: :true).map{ |team_players| team_players.player }
+    player_teams.where(manager: :true).map{ |player_teams| player_teams.player }
   end
 
   def roster
@@ -11,6 +11,6 @@ class Team < ActiveRecord::Base
   end
 
   def line_up
-    team_players.where(in_line_up: :true).map
+    player_teams.where(in_line_up: :true).map
   end
 end

@@ -13,15 +13,15 @@
 
 ActiveRecord::Schema.define(version: 20150922002945) do
 
-  create_table "team_players", force: :cascade do |t|
+  create_table "player_teams", force: :cascade do |t|
     t.integer "player_id_id"
     t.integer "team_id_id"
     t.boolean "manager"
     t.boolean "in_line_up"
   end
 
-  add_index "team_players", ["player_id_id"], name: "index_team_players_on_player_id_id"
-  add_index "team_players", ["team_id_id"], name: "index_team_players_on_team_id_id"
+  add_index "player_teams", ["player_id_id"], name: "index_player_teams_on_player_id_id"
+  add_index "player_teams", ["team_id_id"], name: "index_player_teams_on_team_id_id"
 
   create_table "teams", force: :cascade do |t|
     t.string "name"
