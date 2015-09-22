@@ -2,8 +2,6 @@ class CardsController < ApplicationController
   before_action :set_game_and_user, only: []
 
   def create
-    @card = Card.new(params.require(:game).permit(:color, :comments, :player_id, :game_id))
-
     respond_to do |format|
       if @card.save
         format.html { redirect_to @card, notice: 'Card was successfully created.' }
