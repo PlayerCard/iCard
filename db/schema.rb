@@ -15,10 +15,10 @@ ActiveRecord::Schema.define(version: 20150921234523) do
 
   create_table "profiles", force: :cascade do |t|
     t.string   "picture_url"
-    t.string   "role"
+    t.string   "role",        default: "player", null: false
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   add_index "profiles", ["role"], name: "index_profiles_on_role"
