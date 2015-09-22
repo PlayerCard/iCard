@@ -1,12 +1,24 @@
-# Read about fixtures at
-# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+user_1:
+  email: user1@example.com
+  encrypted_password: <% User.new.send(:password_digest, 'password') %>
+  role: player
 
-# This model initially had no columns defined.  If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+user_2:
+  email: user2@example.com
+  encrypted_password: <% User.new.send(:password_digest, 'password') %>
+  role: player
+
+user_3:
+  email: user3@example.com
+  encrypted_password: <% User.new.send(:password_digest, 'password') %>
+  role: player
+
+user_4:
+  email: user4@example.com
+  encrypted_password: <% User.new.send(:password_digest, 'password') %>
+  role: player
+
+user_5:
+  email: user5@example.com
+  encrypted_password: <% User.new.send(:password_digest, 'password') %>
+  role: player
