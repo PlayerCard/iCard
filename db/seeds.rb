@@ -10,8 +10,8 @@ user  = User.create!( email: "test@example.com",
 # Create players
 players = []
 
-200.times do
-  name = Faker::Name.name
+210.times do
+  name  = Faker::Name.name
   email = Faker::Internet.email(name)
   user = User.create!( email: email,
                     password: "password",
@@ -49,6 +49,29 @@ refs = []
   refs << ref
 end
 
+# Create teams and add a manager to each team
+teams = []
+iterator = 199
+
 10.times do
-  Team.create!( name: Faker::Team.creature )
+  team = Team.create!( name: Faker::Team.creature )
+  user = User.find(iterator)
+  user.rosters.create!(team: team)
+  r = user.rosters.first
+  r.is_manager = true
+  r.save
+  teams << team
+  iterator += 1
+end
+
+# Add 20 more players to each team, total 21 players on team
+
+iterator = 1
+
+teams.each do |team|
+  20.times do
+    player = User.find(iterator)
+    team.rosters.create!(user: player)
+    iterator += 1
+  end
 end

@@ -2,7 +2,4 @@
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
-
-two:
-  name: MyString
+  name: Fixture League
