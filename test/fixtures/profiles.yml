@@ -7,7 +7,6 @@ player_1_profile:
   city: Faker::Address.city
   state: Faker::Address.state_abbr
   zip: Faker::Address.zip
-  picture_url: Faker::Avatar.image
   role: player
 
 player_2_profile:
@@ -19,7 +18,6 @@ player_2_profile:
   city: Faker::Address.city
   state: Faker::Address.state_abbr
   zip: Faker::Address.zip
-  picture_url: Faker::Avatar.image
   role: player
 
 player_3_profile:
@@ -31,7 +29,6 @@ player_3_profile:
   city: Faker::Address.city
   state: Faker::Address.state_abbr
   zip: Faker::Address.zip
-  picture_url: Faker::Avatar.image
   role: player
 
 player_4_profile:
@@ -43,7 +40,6 @@ player_4_profile:
   city: Faker::Address.city
   state: Faker::Address.state_abbr
   zip: Faker::Address.zip
-  picture_url: Faker::Avatar.image
   role: player
 
 ref_1_profile:
@@ -55,7 +51,6 @@ ref_1_profile:
   city: Faker::Address.city
   state: Faker::Address.state_abbr
   zip: Faker::Address.zip
-  picture_url: Faker::Avatar.image
   role: referee
 
 ref_2_profile:
@@ -67,5 +62,4 @@ ref_2_profile:
   city: Faker::Address.city
   state: Faker::Address.state_abbr
   zip: Faker::Address.zip
-  picture_url: Faker::Avatar.image
   role: referee
