@@ -1,0 +1,22 @@
+<%= form_for([@game, @card]) do |f| %>
+  <p>
+    current_user.name
+  </p>
+  <p>
+    <% @game.game_time %>
+  </p>
+
+  <h2 class="player_name"> what goes here ?? </h2>
+
+  <div class="field">
+    <%= f.label :color %><br />
+    <%= f.text_field :color %>
+  </div>
+  <div class="field">
+    <%= f.label :comments %><br />
+    <%= f.text_area :comments %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
