@@ -19,17 +19,6 @@ end
 
 league = League.create( name: "Super Rad Soccer League")
 
-# Create player for testing
-# user  = User.create!( name: "Test Player",
-#                       email: "test@example.com",
-#                    password: "password",
-#       password_confirmation: "password",
-#                   address_1: Faker::Address.street_address,
-#                   address_2: Faker::Address.secondary_address,
-#                        city: Faker::Address.city,
-#                       state: Faker::Address.state_abbr,
-#                         zip: Faker::Address.zip )
-
 210.times do
   create_user("player")
 end
@@ -39,28 +28,21 @@ end
 end
 
 # Create teams and add a manager to each team
-teams = []
-iterator = 199
-
 10.times do
   team = Team.create!( name: Faker::Team.creature )
-  user = User.find(iterator)
-  user.team_memberships.create!(team: team)
-  r = user.team_memberships.first
-  r.is_manager = true
-  r.save
-  teams << team
-  iterator += 1
-end
+  players = User.joins(:profile).where(profiles: { role: 'player' }).limit(30).to_a
 
-# Add 20 more players to each team, total 21 players on team
+  2.times do
+    player = players.pop
+    player.team_memberships.create!(team: team, in_line_up: true, is_manager: true)
+  end
 
-iterator = 1
+  16.times do
+    player = players.pop
+    player.team_memberships.create!(team: team, in_line_up: true, is_manager: false)
+  end
 
-teams.each do |team|
-  20.times do
-    player = User.find(iterator)
-    team.team_memberships.create!(user: player)
-    iterator += 1
+  players.each do |player|
+    player.team_memberships.create!(team: team, in_line_up: false, is_manager: false)
   end
 end
