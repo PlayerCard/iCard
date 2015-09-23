@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<p>I am a user. <%= "#{current_user.email}" %></p>
+<p><%= "#{current_user.inspect}" %></p>
+<%= link_to 'Edit', edit_profile_path(current_user) %> |
+<%= link_to 'Back', profiles_path %>
+
+<%= debug(params) if Rails.env.development? %>
