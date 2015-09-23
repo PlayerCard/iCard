@@ -55,17 +55,20 @@ ActiveRecord::Schema.define(version: 20150923194035) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.string   "picture_url"
-    t.string   "role",        default: "player", null: false
+    t.string   "role",                 default: "player", null: false
     t.integer  "user_id"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.string   "name"
     t.string   "address_1"
     t.string   "address_2"
     t.string   "city"
     t.string   "state"
     t.integer  "zip"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   add_index "profiles", ["role"], name: "index_profiles_on_role"

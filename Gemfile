@@ -14,10 +14,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sqlite3'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
+gem 'paperclip'
+gem 'aws-sdk', '< 2.0'
+
 
 group :development, :test do
   gem 'byebug'
   gem 'minitest-rails-capybara'
+  gem 'dotenv-rails'
 end
 
 group :development do
