@@ -3,9 +3,15 @@ require 'faker'
 league = League.create( name: "Super Rad Soccer League")
 
 # Create player for testing
-user  = User.create!( email: "test@example.com",
+user  = User.create!( name: "Test Player",
+                      email: "test@example.com",
                    password: "password",
-      password_confirmation: "password" )
+      password_confirmation: "password",
+                  address_1: Faker::Address.street_address,
+                  address_2: Faker::Address.secondary_address,
+                       city: Faker::Address.city,
+                      state: Faker::Address.state_abbr,
+                        zip: Faker::Address.zip )
 
 # Create players
 players = []
@@ -13,18 +19,17 @@ players = []
 210.times do
   name  = Faker::Name.name
   email = Faker::Internet.email(name)
-  user = User.create!( email: email,
-                    password: "password",
-       password_confirmation: "password" )
-  player = Profile.create!( user: user,
-                        name: name,
-                   address_1: Faker::Address.street_address,
-                   address_2: Faker::Address.secondary_address,
-                        city: Faker::Address.city,
-                       state: Faker::Address.state_abbr,
-                         zip: Faker::Address.zip,
-                 picture_url: Faker::Avatar.image,
-                        role: "player" )
+  user = User.create!( name: name,
+                      email: email,
+                   password: "password",
+      password_confirmation: "password",
+                  address_1: Faker::Address.street_address,
+                  address_2: Faker::Address.secondary_address,
+                       city: Faker::Address.city,
+                      state: Faker::Address.state_abbr,
+                        zip: Faker::Address.zip )
+  player = Profile.create!( user: user, picture_url: Faker::Avatar.image,
+                                        role: "player" )
   players << player
 end
 
@@ -34,18 +39,16 @@ refs = []
 5.times do
   name = Faker::Name.name
   email = Faker::Internet.email(name)
-  user = User.create!( email: email,
-                    password: "password",
-       password_confirmation: "password" )
-  ref = Profile.create!( user: user,
-                        name: name,
-                   address_1: Faker::Address.street_address,
-                   address_2: Faker::Address.secondary_address,
-                        city: Faker::Address.city,
-                       state: Faker::Address.state_abbr,
-                         zip: Faker::Address.zip,
-                 picture_url: Faker::Avatar.image,
-                        role: "referee" )
+  user = User.create!( name:                  name,
+                       email:                 email,
+                       password:              "password",
+                       password_confirmation: "password",
+                       address_1:             Faker::Address.street_address,
+                       address_2:             Faker::Address.secondary_address,
+                       city:                  Faker::Address.city,
+                       state:                 Faker::Address.state_abbr,
+                       zip:                   Faker::Address.zip )
+  ref = Profile.create!( picture_url: Faker::Avatar.image, role: "referee" )
   refs << ref
 end
 
