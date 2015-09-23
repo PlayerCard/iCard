@@ -10,8 +10,7 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-
-ActiveRecord::Schema.define(version: 20150923180210) do
+ActiveRecord::Schema.define(version: 20150923194035) do
 
   create_table "cards", force: :cascade do |t|
     t.string   "color",      default: "Yellow", null: false
@@ -24,6 +23,18 @@ ActiveRecord::Schema.define(version: 20150923180210) do
 
   add_index "cards", ["game_id"], name: "index_cards_on_game_id"
   add_index "cards", ["player_id"], name: "index_cards_on_player_id"
+
+  create_table "game_players", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "game_id"
+    t.integer  "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "game_players", ["game_id"], name: "index_game_players_on_game_id"
+  add_index "game_players", ["team_id"], name: "index_game_players_on_team_id"
+  add_index "game_players", ["user_id"], name: "index_game_players_on_user_id"
 
   create_table "games", force: :cascade do |t|
     t.integer  "home_team",     null: false
