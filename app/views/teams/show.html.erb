@@ -6,14 +6,14 @@
   <tr>
     <th><strong>Managers</strong></th>
   </tr>
-  <% @team.team_memberships.each do |membership| %>
+  <% @managers.each do |manager| %>
     <tr>
-      <% if membership.is_manager? %>
-        <td><%= membership.user.profile.name %></td>
-      <% end %>
+        <td><%= manager.user.profile.name %></td>
     </tr>
   <% end %>
 </table>
+
+<%= params.inspect %>
 
 <table>
   <tr>
