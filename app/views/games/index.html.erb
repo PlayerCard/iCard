@@ -3,8 +3,8 @@
 <% Game.all.each do |game| %>
 
   <div class="team_titles">
-  <%= link_to @game.home_team.name, @game.home_team %> Vs.
-  <%= link_to @game.away_team.name, @game.away_team %>
+  <%= link_to @game.team.first.name, @game.team.first %> Vs.
+  <%= link_to @game.team.last.name, @game.team.last %>
   </div>
   Start Time:  <%= @game.game_time %>
 <% end %>
