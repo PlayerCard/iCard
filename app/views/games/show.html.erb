@@ -1,6 +1,6 @@
 
 <h2>
-  <%= @game.away_team.name %> @ <%= @game.home_team.name %>
+  <%= @game.team.last.name %> @ <%= @game.team.first.name %>
 </h2>
 <p>
   Location:  <%= @game.game_location %> <br/>
@@ -8,11 +8,11 @@
   Referee:  <%= @game.referee.name %>
 </p>
 <div class="team_titles">
-  <%= link_to @game.home_team.name, @game.home_team %>
-  <%= link_to @game.away_team.name, @game.away_team %>
+  <%= link_to @game.team.first.name, @game.team.first %>
+  <%= link_to @game.team.last.name, @game.team.last %>
 </div>
-<div class="home_team team">
-  <% @game.away_team.line_up.each do |player| %>
+<div class="team.first team">
+  <% @game.team.last.line_up.each do |player| %>
     <div>
     <%= link_to player_path player do %>
       <%= image_tag player.profile.picture_url %>
@@ -26,7 +26,7 @@
 
 </div>
 
-<div class="away_team team">
+<div class="team.last team">
   <%= @game.home.team.line_up.each do |player| %>
     <div>
     <% link_to player_path player do %>
