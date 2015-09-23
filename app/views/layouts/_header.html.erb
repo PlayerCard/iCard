@@ -1,5 +1,5 @@
 <% if current_user.present? %>
-  <p><strong>Signed in as: </strong><%= current_user.name %> |
+  <p><strong>Signed in as: </strong><%= current_user.email %> |
   <%= link_to "Sign out", destroy_user_session_path, method: :delete %></p>
 <% else %>
   <%= link_to "Sign in", new_user_session_path %> |
