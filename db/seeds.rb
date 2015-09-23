@@ -78,3 +78,14 @@ teams.each do |team|
     iterator += 1
   end
 end
+
+games = []
+
+30.times do |game|
+  game.create!(:home_team =     teams.sample
+               :away_team =     teams.sample
+               :game_time =     Faker::Time.forward(20, :morning)
+               :game_locatoin = Faker::Address.street_address
+               :referee =       refs.sample)
+  games << game
+end
