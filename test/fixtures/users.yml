@@ -1,24 +1,29 @@
-user_1:
+player_1:
   email: user1@example.com
   encrypted_password: <% User.new.send(:password_digest, 'password') %>
-  role: player
+  profile_id: 1
 
-user_2:
+player_2:
   email: user2@example.com
   encrypted_password: <% User.new.send(:password_digest, 'password') %>
-  role: player
+  profile_id: 2
 
-user_3:
+player_3:
   email: user3@example.com
   encrypted_password: <% User.new.send(:password_digest, 'password') %>
-  role: player
+  profile_id: 3
 
-user_4:
+player_4:
   email: user4@example.com
   encrypted_password: <% User.new.send(:password_digest, 'password') %>
-  role: player
+  profile_id: 4
 
-user_5:
-  email: user5@example.com
+ref_1:
+  email: ref1@example.com
   encrypted_password: <% User.new.send(:password_digest, 'password') %>
-  role: player
+  profile_id: 5
+
+ref_2:
+  email: ref2@example.com
+  encrypted_password: <% User.new.send(:password_digest, 'password') %>
+  profile_id: 6
