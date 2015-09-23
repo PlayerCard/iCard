@@ -1,12 +1,21 @@
 class ProfilesController < ApplicationController
-  before_action :set_user, only: [:new, :show]
+  before_action :set_user, only: [:show, :new, :create]
 
   def new
-    @profile = @user.create_profile(profile_params)
+    @profile = Profile.new
   end
 
   def show
     @profile = @user.profile
+  end
+
+  def create
+    @profile = @user.build_profile(profile_params)
+    if @profile.save
+      redirect_to @profile, notice: "Profile was successfully created."
+    else
+      render :new
+    end
   end
 
   private
