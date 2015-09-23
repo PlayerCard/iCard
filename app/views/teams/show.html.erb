@@ -1,4 +1,32 @@
 <p id="notice"><%= notice %></p>
 
+<h1><%= @team.name %></h1>
+
+<table>
+  <tr>
+    <th><strong>Managers</strong></th>
+  </tr>
+  <% @team.team_memberships.each do |membership| %>
+    <tr>
+      <% if membership.is_manager? %>
+        <td><%= membership.user.profile.name %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+
+<table>
+  <tr>
+    <th><strong>Players</strong></th>
+  </tr>
+  <% @team.team_memberships.each do |membership| %>
+    <tr>
+      <% if membership.is_manager? == false %>
+        <td><%= membership.user.profile.name %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+
 <%= link_to 'Edit', edit_team_path(@team) %> |
 <%= link_to 'Back', teams_path %>
