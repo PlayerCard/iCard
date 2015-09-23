@@ -1,0 +1,10 @@
+<h1>Listing Games</h1>
+
+<% games.each do |game| %>
+
+  <div class="team_titles">
+  <%= link_to @game.home_team.name, @game.home_team %>
+  <%= link_to @game.away_team.name, @game.away_team %>
+  </div>
+Start Time:  <%= @game.game_time %> <br/>
+<% end %>
