@@ -3,9 +3,15 @@ require 'faker'
 league = League.create( name: "Super Rad Soccer League")
 
 # Create player for testing
-user  = User.create!( email: "test@example.com",
+user  = User.create!( name: "Test Player",
+                      email: "test@example.com",
                    password: "password",
-      password_confirmation: "password" )
+      password_confirmation: "password",
+                  address_1: Faker::Address.street_address,
+                  address_2: Faker::Address.secondary_address,
+                       city: Faker::Address.city,
+                      state: Faker::Address.state_abbr,
+                        zip: Faker::Address.zip )
 
 # Create players
 players = []
@@ -72,4 +78,15 @@ teams.each do |team|
     team.rosters.create!(user: player)
     iterator += 1
   end
+end
+
+games = []
+
+30.times do |game|
+  game.create!(:home_team =     teams.sample
+               :away_team =     teams.sample
+               :game_time =     Faker::Time.forward(20, :morning)
+               :game_locatoin = Faker::Address.street_address
+               :referee =       refs.sample)
+  games << game
 end

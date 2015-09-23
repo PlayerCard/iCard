@@ -1,15 +1,44 @@
-<p>
-  <b>Game:</b>
-  <%= @game.away.name %> @ <%= @game.home.name %>
-  <%= @game.game_location %>
-  <%= @game.game_time %>
-  <%= @game.referee.name %>
-</p>
 
-<td><%= link_to @game.away.name, team_path(@game.away.team.id) %></td> | @ |
-<td><%= link_to @game.home.name, team_path(@game.home.team.id)%></td>
-
+<h2>
+  <%= @game.away_team.name %> @ <%= @game.home_team.name %>
+</h2>
 <p>
-   Put the line-ups here
+  Location:  <%= @game.game_location %> <br/>
+  Start Time:  <%= @game.game_time %> <br/>
+  Referee:  <%= @game.referee.name %>
 </p>
+<div class="team_titles">
+  <%= link_to @game.home_team.name, @game.home_team %>
+  <%= link_to @game.away_team.name, @game.away_team %>
+</div>
+<div class="home_team team">
+  <% @game.away_team.line_up.each do |player| %>
+    <div>
+    <%= link_to player_path player do %>
+      <%= image_tag player.profile.picture_url %>
+    <% end %>
+    <%= player.name %>
+    <% if current_user.role == "referee"%>
+      <%= link_to 'Book Player', new_game_card_path(@game.id)%>
+    <% end %>
+    </div>
+  <% end %>
+
+</div>
+
+<div class="away_team team">
+  <%= @game.home.team.line_up.each do |player| %>
+    <div>
+    <% link_to player_path player do %>
+      <% image_tag player.profile.picture_url %>
+    <% end %>
+    <%= player.name %>
+    <% if current_user.role == "referee"%>
+      <%= link_to 'Book Player', new_game_card_path(@game.id)%>
+    <% end %>
+    </div>
+  <% end %>
+</div>
+
+
 

@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20150923181705) do
   add_index "profiles", ["role"], name: "index_profiles_on_role"
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
 
-  create_table "rosters", force: :cascade do |t|
+  create_table "team_memberships", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "team_id"
     t.boolean  "in_line_up"
@@ -72,8 +72,8 @@ ActiveRecord::Schema.define(version: 20150923181705) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "rosters", ["team_id"], name: "index_rosters_on_team_id"
-  add_index "rosters", ["user_id"], name: "index_rosters_on_user_id"
+  add_index "team_memberships", ["team_id"], name: "index_team_memberships_on_team_id"
+  add_index "team_memberships", ["user_id"], name: "index_team_memberships_on_user_id"
 
   create_table "teams", force: :cascade do |t|
     t.string   "name",       null: false
@@ -92,6 +92,12 @@ ActiveRecord::Schema.define(version: 20150923181705) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "name"
+    t.string   "address_1"
+    t.string   "address_2"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

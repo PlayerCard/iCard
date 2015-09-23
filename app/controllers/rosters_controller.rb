@@ -1,2 +1,0 @@
-class RostersController < ApplicationController
-end

@@ -1,12 +1,12 @@
 class Team < ActiveRecord::Base
-  has_many :users, through: :roster
-  has_many :rosters
+  has_many :users, through: :team_memberships
+  has_many :team_memberships
 
   def managers
-    rosters.where(is_manager: true).map{ |roster| roster.user }
+    team_memberships.where(is_manager: true).map{ |team_membership| team_membership.user }
   end
 
   def line_up
-    rosters.where(in_line_up: true).map{ |roster| roster.user }
+    team_memberships.where(in_line_up: true).map{ |team_membership| team_membership.user }
   end
 end
