@@ -18,8 +18,9 @@
       <%= image_tag player.profile.picture_url %>
     <% end %>
     <%= player.name %>
-
-    <%= link_to 'Book Player', new_game_card_path(@game.id)%>
+    <% if current_user.role == "referee"%>
+      <%= link_to 'Book Player', new_game_card_path(@game.id)%>
+    <% end %>
     </div>
   <% end %>
 
@@ -32,8 +33,9 @@
       <% image_tag player.profile.picture_url %>
     <% end %>
     <%= player.name %>
-
-    <% link_to 'Book Player', new_game_card_path(@game.id)%>
+    <% if current_user.role == "referee"%>
+      <%= link_to 'Book Player', new_game_card_path(@game.id)%>
+    <% end %>
     </div>
   <% end %>
 </div>

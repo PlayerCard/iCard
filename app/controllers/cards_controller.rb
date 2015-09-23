@@ -41,6 +41,6 @@ class CardsController < ApplicationController
     # end
 
     def card_params
-      params.require(:card).permit(:color, :comments, :player_id)
+      params.require(:card).permit(:color, :comments, :user_id)
     end
 end
