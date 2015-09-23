@@ -1,56 +1,41 @@
 require 'faker'
 
+def create_user(role)
+  name  = Faker::Name.name
+  User.create!( email:                  Faker::Internet.email(name),
+                password:               "password",
+                password_confirmation:  "password",
+                profile:                Profile.create!(
+                                              name:                   name,
+                                              role: role,
+                                              address_1:              Faker::Address.street_address,
+                                              address_2:              Faker::Address.secondary_address,
+                                              city:                   Faker::Address.city,
+                                              state:                  Faker::Address.state_abbr,
+                                              zip:                    Faker::Address.zip
+                                              )
+                )
+end
+
 league = League.create( name: "Super Rad Soccer League")
 
 # Create player for testing
-user  = User.create!( name: "Test Player",
-                      email: "test@example.com",
-                   password: "password",
-      password_confirmation: "password",
-                  address_1: Faker::Address.street_address,
-                  address_2: Faker::Address.secondary_address,
-                       city: Faker::Address.city,
-                      state: Faker::Address.state_abbr,
-                        zip: Faker::Address.zip )
-
-# Create players
-players = []
+# user  = User.create!( name: "Test Player",
+#                       email: "test@example.com",
+#                    password: "password",
+#       password_confirmation: "password",
+#                   address_1: Faker::Address.street_address,
+#                   address_2: Faker::Address.secondary_address,
+#                        city: Faker::Address.city,
+#                       state: Faker::Address.state_abbr,
+#                         zip: Faker::Address.zip )
 
 210.times do
-  name  = Faker::Name.name
-  email = Faker::Internet.email(name)
-  user = User.create!( email: email,
-                    password: "password",
-       password_confirmation: "password" )
-  player = Profile.create!( user: user,
-                        name: name,
-                   address_1: Faker::Address.street_address,
-                   address_2: Faker::Address.secondary_address,
-                        city: Faker::Address.city,
-                       state: Faker::Address.state_abbr,
-                         zip: Faker::Address.zip,
-                        role: "player" )
-  players << player
+  create_user("player")
 end
 
-# # Create refs
-refs = []
-
 5.times do
-  name = Faker::Name.name
-  email = Faker::Internet.email(name)
-  user = User.create!( email: email,
-                    password: "password",
-       password_confirmation: "password" )
-  ref = Profile.create!( user: user,
-                        name: name,
-                   address_1: Faker::Address.street_address,
-                   address_2: Faker::Address.secondary_address,
-                        city: Faker::Address.city,
-                       state: Faker::Address.state_abbr,
-                         zip: Faker::Address.zip,
-                        role: "referee" )
-  refs << ref
+  create_user("referee")
 end
 
 # Create teams and add a manager to each team
@@ -60,8 +45,8 @@ iterator = 199
 10.times do
   team = Team.create!( name: Faker::Team.creature )
   user = User.find(iterator)
-  user.rosters.create!(team: team)
-  r = user.rosters.first
+  user.team_memberships.create!(team: team)
+  r = user.team_memberships.first
   r.is_manager = true
   r.save
   teams << team
@@ -75,18 +60,7 @@ iterator = 1
 teams.each do |team|
   20.times do
     player = User.find(iterator)
-    team.rosters.create!(user: player)
+    team.team_memberships.create!(user: player)
     iterator += 1
   end
-end
-
-games = []
-
-30.times do |game|
-  game.create!(:home_team =     teams.sample
-               :away_team =     teams.sample
-               :game_time =     Faker::Time.forward(20, :morning)
-               :game_locatoin = Faker::Address.street_address
-               :referee =       refs.sample)
-  games << game
 end
