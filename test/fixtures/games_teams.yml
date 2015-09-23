@@ -1,0 +1,15 @@
+game_team_1_1:
+  game_id: 1
+  team_id: 1
+
+game_team_1_2:
+  game_id: 1
+  team_id: 2
+
+game_team_2_1:
+  game_id: 2
+  team_id: 2
+
+game_team_2_2:
+  game_id: 2
+  team_id: 1
