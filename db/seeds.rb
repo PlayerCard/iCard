@@ -23,7 +23,6 @@ players = []
                         city: Faker::Address.city,
                        state: Faker::Address.state_abbr,
                          zip: Faker::Address.zip,
-                 picture_url: Faker::Avatar.image,
                         role: "player" )
   players << player
 end
@@ -44,7 +43,6 @@ refs = []
                         city: Faker::Address.city,
                        state: Faker::Address.state_abbr,
                          zip: Faker::Address.zip,
-                 picture_url: Faker::Avatar.image,
                         role: "referee" )
   refs << ref
 end
