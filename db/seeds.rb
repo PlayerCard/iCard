@@ -87,4 +87,5 @@ games = []
                :game_time =     Faker::Time.forward(20, :morning)
                :game_locatoin = Faker::Address.street_address
                :referee =       refs.sample)
+  games << game
 end
