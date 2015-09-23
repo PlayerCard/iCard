@@ -11,7 +11,40 @@
     </div>
   <% end %>
 
-  <p><%= "#{@profile.inspect}" %></p>
+  <p class="field">
+    <%= f.label :name %>
+    <%= f.text_area :name %>
+  </p>
+
+  <p class="field">
+    <%= f.label :address_1 %>
+    <%= f.text_area :address_1 %>
+  </p>
+
+  <p class="field">
+    <%= f.label :address_2 %>
+    <%= f.text_area :address_2 %>
+  </p>
+
+  <p class="field">
+    <%= f.label :city %>
+     <%= f.text_area :city %>
+  </p>
+
+  <p class="field">
+    <%= f.label :state %>
+     <%= f.text_area :state %>
+  </p>
+
+  <p class="field">
+    <%= f.label :zip %>
+     <%= f.text_area :zip %>
+  </p>
+
+  <p class='field'>
+    <%= f.label 'Upload Profile Pic' %>
+    <%= f.file_field :picture %>
+  </p>
 
   <div class="actions">
     <%= f.submit %>

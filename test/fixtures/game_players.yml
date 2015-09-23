@@ -1,0 +1,12 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user: 
+  game: 
+  team: 
+
+two:
+  user: 
+  game: 
+  team: 

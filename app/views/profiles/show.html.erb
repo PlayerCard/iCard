@@ -1,5 +1,19 @@
 <p id="notice"><%= notice %></p>
 
+<%= image_tag @user.profile.picture.url(:medium) %>
+
+<p><b>NAME: </b><%= @profile.name %></p>
+
+<p><b>ADDRESS 1: </b><%= @profile.address_1 %></p>
+
+<p><b>ADDRESS 2: </b><%= @profile.address_2 %></p>
+
+<p><b>CITY: </b><%= @profile.city %></p>
+
+<p><b>STATE: </b><%= @profile.state %></p>
+
+<p><b>ZIP: </b><%= @profile.zip %></p>
+
 <p><%= "#{@profile.inspect}" %></p>
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
