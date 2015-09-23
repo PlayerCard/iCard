@@ -1,14 +1,13 @@
 class CardsController < ApplicationController
-  before_action :set_game_and_user, only: []
+  before_action :set_game, only: [:new, :create]
 
   def create
-    @card = Card.new(card_params)
+    @card = @game.cards.build(card_params)
+
     respond_to do |format|
       if @card.save
-        format.html { redirect_to @card, notice: 'Card was successfully created.' }
-        format.json { render :show, status: :created, location: @card }
+        format.json { render json: @card, status: 200 }
       else
-        format.html { render :new }
         format.json { render json: @card.errors, status: :unprocessable_entity }
       end
     end
@@ -33,16 +32,15 @@ class CardsController < ApplicationController
   end
 
   private
-    def set_user_and_game
-      @user = User.find(params[:id])
+    def set_game
       @game = Game.find(params[:id])
     end
 
-    def set_player
-      @player = Player.find(params[:id])
-    end
+    # def set_player
+    #   @player = Player.find(params[:id])
+    # end
 
     def card_params
-      params.require(:card).permit(:color, :comments, :player_id, :game_id)
+      params.require(:card).permit(:color, :comments, :user_id)
     end
 end
