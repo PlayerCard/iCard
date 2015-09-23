@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :teams
+  resources :profiles
   devise_for :users
   resources :games do
     resources :cards
