@@ -1,25 +1,25 @@
-roster1:
+team_member1:
   id: 1
   user_id: 1
   team_id: 1
   in_line_up: true
   is_manager: false
 
-roster2:
+team_member2:
   id: 2
   user_id: 2
   team_id: 1
   in_line_up: true
   is_manager: true
 
-roster3:
+team_member3:
   id: 3
   user_id: 3
   team_id: 2
   in_line_up: true
   is_manager: false  
 
-roster4:
+team_member4:
   id: 4
   user_id: 4
   team_id: 2

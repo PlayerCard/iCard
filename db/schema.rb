@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150922230812) do
+ActiveRecord::Schema.define(version: 20150923180210) do
 
   create_table "cards", force: :cascade do |t|
     t.string   "color",      default: "Yellow", null: false
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 20150922230812) do
   add_index "profiles", ["role"], name: "index_profiles_on_role"
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
 
-  create_table "rosters", force: :cascade do |t|
+  create_table "team_memberships", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "team_id"
     t.boolean  "in_line_up"
@@ -69,8 +69,8 @@ ActiveRecord::Schema.define(version: 20150922230812) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "rosters", ["team_id"], name: "index_rosters_on_team_id"
-  add_index "rosters", ["user_id"], name: "index_rosters_on_user_id"
+  add_index "team_memberships", ["team_id"], name: "index_team_memberships_on_team_id"
+  add_index "team_memberships", ["user_id"], name: "index_team_memberships_on_user_id"
 
   create_table "teams", force: :cascade do |t|
     t.string   "name",       null: false
