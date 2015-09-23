@@ -2,6 +2,17 @@ require 'faker'
 
 league = League.create( name: "Super Rad Soccer League")
 
+# Create player for testing
+user  = User.create!( name: "Test Player",
+                      email: "test@example.com",
+                   password: "password",
+      password_confirmation: "password",
+                  address_1: Faker::Address.street_address,
+                  address_2: Faker::Address.secondary_address,
+                       city: Faker::Address.city,
+                      state: Faker::Address.state_abbr,
+                        zip: Faker::Address.zip )
+
 # Create players
 players = []
 
@@ -48,13 +59,6 @@ refs = []
   refs << ref
 end
 
-# # seed db with teams and managers, users must be created first
-# teams = []
-
-# (0..9).each do |num|
-#   manager = User.find(num)
-#   team = Team.create!( name: Faker::Team.creature )
-#   team_with_manager = team.teamPlayer.create!( manager: true )
-# end
-
-
+10.times do
+  Team.create!( name: Faker::Team.creature )
+end
