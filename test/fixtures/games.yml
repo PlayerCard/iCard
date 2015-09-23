@@ -1,13 +1,9 @@
 game1:
-  home_team: 1
-  away_team: 2
   game_time: <%= Time.now %>
   game_location: Genesee
   referee: 1
 
 game2:
-  home_team: 2
-  away_team: 1
   game_time: <%= Time.now %>
   game_location: Lower Woodland
   referee: 1

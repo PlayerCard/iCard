@@ -1,6 +1,10 @@
 class ProfilesController < ApplicationController
   before_action :set_user, only: [:show, :new, :create]
 
+  def index
+    @profiles = Profile.all
+  end
+
   def new
     @profile = Profile.new
   end

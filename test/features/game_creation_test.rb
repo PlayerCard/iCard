@@ -3,14 +3,14 @@ require "test_helper"
 feature "Creating Gamess" do
   scenario "League can create new games" do
     login(:admin) #leagueAdmin? whats name of league admin class?
-    visit league_path[:id = 1]
+    visit league_path(1)
 
     click_on "Create Game"
-    fill_in 'home_team' with:
-    fill_in 'away_team' with:
-    fill_in 'game_loaction' with:
-    fill_in 'game_time' with:
-    fill_in 'Referee' with:
+    select('lions' 'Home Team')
+    select('tigers' 'Away Team')
+    fill_in 'game_loaction' with: "Seattle, Pike Place Park"
+    fill_in 'game_time' with: Time.now
+    fill_in 'Referee' with: 5
 
     click_on 'Schedule Game'
     page.text.must_contain 'Game successfully scheduled'
@@ -18,10 +18,9 @@ feature "Creating Gamess" do
 
   scenario "Can't create games with incomplete form" do
     login(:admin)
-    visit league_path[:id = 1]
+    visit league_path(1)
 
     click_on "Create Game"
-    fill_in 'game_time' with: ''
 
     click_on 'Schedule Game'
     page.text.must_contain 'prohibited this game from being saved'
@@ -35,7 +34,7 @@ feature "Creating Gamess" do
 
   scenario "Non-league admins can't see new game button" do
     sign_in(:player)
-    visit league_path[:id]
+    visit league_path(1)
     page.text.wont_contain "Schedule New Game"
   end
 end
