@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150922194307) do
+ActiveRecord::Schema.define(version: 20150922230812) do
 
   create_table "cards", force: :cascade do |t|
     t.string   "color",      default: "Yellow", null: false
@@ -49,13 +49,19 @@ ActiveRecord::Schema.define(version: 20150922194307) do
     t.integer  "user_id"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+    t.string   "name"
+    t.string   "address_1"
+    t.string   "address_2"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
   end
 
   add_index "profiles", ["role"], name: "index_profiles_on_role"
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
 
   create_table "rosters", force: :cascade do |t|
-    t.integer  "user_id"
+    t.integer  "player_id"
     t.integer  "team_id"
     t.boolean  "in_line_up"
     t.boolean  "is_manager"
@@ -63,8 +69,8 @@ ActiveRecord::Schema.define(version: 20150922194307) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "rosters", ["player_id"], name: "index_rosters_on_player_id"
   add_index "rosters", ["team_id"], name: "index_rosters_on_team_id"
-  add_index "rosters", ["user_id"], name: "index_rosters_on_user_id"
 
   create_table "teams", force: :cascade do |t|
     t.string   "name",       null: false
@@ -83,12 +89,6 @@ ActiveRecord::Schema.define(version: 20150922194307) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "name"
-    t.string   "address_1"
-    t.string   "address_2"
-    t.string   "city"
-    t.string   "state"
-    t.integer  "zip"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
