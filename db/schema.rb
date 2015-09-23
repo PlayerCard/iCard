@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150922194307) do
+ActiveRecord::Schema.define(version: 20150923194035) do
 
   create_table "cards", force: :cascade do |t|
     t.string   "color",      default: "Yellow", null: false
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(version: 20150922194307) do
 
   add_index "cards", ["game_id"], name: "index_cards_on_game_id"
   add_index "cards", ["player_id"], name: "index_cards_on_player_id"
+
+  create_table "game_players", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "game_id"
+    t.integer  "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "game_players", ["game_id"], name: "index_game_players_on_game_id"
+  add_index "game_players", ["team_id"], name: "index_game_players_on_team_id"
+  add_index "game_players", ["user_id"], name: "index_game_players_on_user_id"
 
   create_table "games", force: :cascade do |t|
     t.integer  "home_team",     null: false
@@ -49,6 +61,12 @@ ActiveRecord::Schema.define(version: 20150922194307) do
     t.integer  "user_id"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+    t.string   "name"
+    t.string   "address_1"
+    t.string   "address_2"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
   end
 
   add_index "profiles", ["role"], name: "index_profiles_on_role"
@@ -83,12 +101,6 @@ ActiveRecord::Schema.define(version: 20150922194307) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "name"
-    t.string   "address_1"
-    t.string   "address_2"
-    t.string   "city"
-    t.string   "state"
-    t.integer  "zip"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
