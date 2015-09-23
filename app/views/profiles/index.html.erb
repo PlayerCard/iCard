@@ -1,0 +1,14 @@
+<!-- picture, name, role, team, is manager -->
+
+<% @profiles.each do |profile| %>
+  <p>
+    <%= profile.name %>
+    <%= profile.role %>
+    <% profile.user.teams.each do |team| %>
+      <%= team.name %>
+    <% end %>
+    <% profile.user.team_memberships.each do |player| %>
+      <%= player.is_manager %>
+    <% end %>
+  </p>
+<% end %>

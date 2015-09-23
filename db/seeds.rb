@@ -30,7 +30,7 @@ end
 # Create teams and add a manager to each team
 10.times do
   team = Team.create!( name: Faker::Team.creature )
-  players = User.joins(:profile).where(profiles: { role: 'player' }).limit(30).to_a
+  players = User.joins(:profile).where(profiles: { role: 'player' }).to_a.sample(30)
 
   2.times do
     player = players.pop
