@@ -1,5 +1,7 @@
 ENV["RAILS_ENV"] = "test"
 Rails.env = "test"
+require 'simplecov'
+SimpleCov.start
 require File.expand_path("../../config/environment", __FILE__)
 require "rails/test_help"
 require "minitest/rails"
@@ -20,7 +22,7 @@ class ActiveSupport::TestCase
     # Sign in authenticated user
     visit new_user_session_path
     fill_in "Email", with: users(role).email
-    fill_in "Name", with: users(role).name
+    # fill_in "Name", with: users(role).name
     fill_in "Password", with: "password"
     click_on "Log in"
   end
