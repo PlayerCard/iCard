@@ -1,13 +1,13 @@
 game1:
-  home_team: 1
-  away_team: 2
+  home_team: lions
+  away_team: tigers
   game_time: <%= Time.now %>
   game_location: Genesee
-  referee: 1
+  referee: ref_1
 
 game2:
-  home_team: 2
-  away_team: 1
+  home_team: tigers
+  away_team: lions
   game_time: <%= Time.now %>
   game_location: Lower Woodland
-  referee: 1
+  referee: ref_1

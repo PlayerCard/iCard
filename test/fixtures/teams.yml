@@ -1,7 +1,5 @@
 lions:
-  id: 1
   name: Lions
 
 tigers:
-  id: 2
   name: Tigers
