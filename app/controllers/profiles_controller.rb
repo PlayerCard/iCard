@@ -10,7 +10,8 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @profile = @user.profile
+    @profile = Profile.find(params[:id])
+    @cards = Card.all.where(player_id: @profile.user_id)
   end
 
   def edit
