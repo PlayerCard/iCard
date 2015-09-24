@@ -17,14 +17,16 @@ feature "Creating Cards" do
 
 
   scenario "Can't book player with incomplete Card form" do
+    # Given a signed-in ref on a game page
     sign_in(:ref_1)
-    visit game_path(:game1)
-
-    click_on "Book Player"
-    fill_in 'color', with: 'Green'
-    fill_in 'comments', with: ''
-
-    click_on 'Book Player'
+    game = games(:game1)
+    visit game_path(game)
+    # When click on 'book player' and submit invalid params
+    first("a[href='/games/#{game.id}/cards/new']").click
+    fill_in 'Color', with: 'Green'
+    fill_in 'Comments', with: ''
+    click_on 'Create Card'
+    # Then the player shouldn't be booked
     page.text.must_contain 'error'
   end
 
