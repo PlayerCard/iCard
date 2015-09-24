@@ -11,7 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150923232321) do
+ActiveRecord::Schema.define(version: 20150924170622) do
+
 
   create_table "cards", force: :cascade do |t|
     t.string   "color",      default: "Yellow", null: false
@@ -44,6 +45,7 @@ ActiveRecord::Schema.define(version: 20150923232321) do
     t.datetime "updated_at",    null: false
     t.integer  "referee_id"
   end
+  add_index "games", ["referee_id"], name: "index_games_on_referee_id"
 
   create_table "games_teams", id: false, force: :cascade do |t|
     t.integer "game_id"
