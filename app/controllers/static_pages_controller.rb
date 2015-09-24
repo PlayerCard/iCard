@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
   def index
-    @league = League.find(1)
+    @league = League.first
   end
 end

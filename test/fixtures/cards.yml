@@ -4,11 +4,11 @@
 card1:
   color: Black
   comments: Threw live grenade on field
-  player_id: 1
-  game_id: 1
+  player: player_1
+  game: game1
 
 card2:
   color: Yellow
   comments: Started crying
-  player_id: 2
-  game_id: 1
+  player: player_2
+  game: game1

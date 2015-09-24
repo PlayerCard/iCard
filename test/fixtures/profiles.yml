@@ -1,6 +1,15 @@
+admin_profile:
+  user: admin
+  name: Super Rad Soccer League
+  address_1: Faker::Address.street_address
+  address_2: Faker::Address.secondary_address
+  city: Faker::Address.city
+  state: Faker::Address.state_abbr
+  zip: Faker::Address.zip
+  role: admin
+
 player_1_profile:
-  id: 1
-  user_id: 1
+  user: player_1
   name: Faker::Name.name
   address_1: Faker::Address.street_address
   address_2: Faker::Address.secondary_address
@@ -10,8 +19,7 @@ player_1_profile:
   role: player
 
 player_2_profile:
-  id: 2
-  user_id: 2
+  user: player_2
   name: Faker::Name.name
   address_1: Faker::Address.street_address
   address_2: Faker::Address.secondary_address
@@ -21,8 +29,7 @@ player_2_profile:
   role: player
 
 player_3_profile:
-  id: 3
-  user_id: 3
+  user: player_3
   name: Faker::Name.name
   address_1: Faker::Address.street_address
   address_2: Faker::Address.secondary_address
@@ -32,8 +39,7 @@ player_3_profile:
   role: player
 
 player_4_profile:
-  id: 4
-  user_id: 4
+  user: player_4
   name: Faker::Name.name
   address_1: Faker::Address.street_address
   address_2: Faker::Address.secondary_address
@@ -43,8 +49,7 @@ player_4_profile:
   role: player
 
 ref_1_profile:
-  id: 5
-  user_id: 5
+  user: ref_1
   name: Faker::Name.name
   address_1: Faker::Address.street_address
   address_2: Faker::Address.secondary_address
@@ -54,8 +59,7 @@ ref_1_profile:
   role: referee
 
 ref_2_profile:
-  id: 6
-  user_id: 6
+  user: ref_2
   name: Faker::Name.name
   address_1: Faker::Address.street_address
   address_2: Faker::Address.secondary_address
