@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :update, :edit, :destroy]
   before_action :set_league, only: []
-  before_action :set_teams, only: :new
+  before_action :set_teams, only: [:new, :index]
   before_action :set_referees, only: :new
 
   def create
