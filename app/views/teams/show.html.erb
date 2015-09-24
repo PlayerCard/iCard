@@ -24,9 +24,9 @@
 
 <table>
   <tr>
-    <th><strong>Players</strong></th>
+    <th><strong>Players not in lineup</strong></th>
   </tr>
-  <% @players.each do |player| %>
+  <% @not_in_lineup.each do |player| %>
     <tr>
       <td><%= link_to player.user.profile.name, profile_path(player.user) %></td>
     </tr>

@@ -11,8 +11,8 @@ class TeamsController < ApplicationController
   # GET /teams/1.json
   def show
     @managers = @team.team_memberships.where(is_manager: true)
-    @players = @team.team_memberships.where(is_manager: false)
     @current_lineup = @team.line_up
+    @not_in_lineup = @team.team_memberships.where(in_line_up: false)
   end
 
   # GET /teams/new
@@ -43,14 +43,10 @@ class TeamsController < ApplicationController
   # PATCH/PUT /teams/1
   # PATCH/PUT /teams/1.json
   def update
-    respond_to do |format|
-      if @team.update(team_params)
-        format.html { redirect_to @team, notice: 'Team was successfully updated.' }
-        format.json { render :show, status: :ok, location: @team }
-      else
-        format.html { render :edit }
-        format.json { render json: @team.errors, status: :unprocessable_entity }
-      end
+    if @team.update(team_params)
+      redirect_to @team, notice: 'Team was successfully updated.'
+    else
+      render :edit
     end
   end
 
@@ -72,6 +68,6 @@ class TeamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
-      params[:team]
+      params.require(:team).permit(:name)
     end
 end
