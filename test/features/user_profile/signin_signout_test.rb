@@ -4,7 +4,7 @@ feature "User Sign In & Out" do
   scenario "sign in and out a valid user" do
     sign_in(:player_1)
     page.text.must_include "Signed in successfully"
-    click_on "Sign Out"
+    click_on "Sign out"
     page.text.must_include "Signed out successfully"
   end
 
