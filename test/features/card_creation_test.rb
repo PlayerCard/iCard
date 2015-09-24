@@ -23,7 +23,7 @@ feature "Creating Cards" do
     fill_in 'comments', with: ''
 
     click_on 'Book Player'
-    page.text.must_contain 'prohibited this card from being saved'
+    page.text.must_contain 'error'
   end
 
 

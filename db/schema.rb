@@ -10,7 +10,8 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-ActiveRecord::Schema.define(version: 20150923194035) do
+
+ActiveRecord::Schema.define(version: 20150923232321) do
 
   create_table "cards", force: :cascade do |t|
     t.string   "color",      default: "Yellow", null: false
@@ -37,16 +38,20 @@ ActiveRecord::Schema.define(version: 20150923194035) do
   add_index "game_players", ["user_id"], name: "index_game_players_on_user_id"
 
   create_table "games", force: :cascade do |t|
-    t.integer  "home_team",     null: false
-    t.integer  "away_team",     null: false
     t.date     "game_time"
     t.string   "game_location"
-    t.integer  "referee",       null: false
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "referee_id"
   end
 
-  add_index "games", ["referee"], name: "index_games_on_referee"
+  create_table "games_teams", id: false, force: :cascade do |t|
+    t.integer "game_id"
+    t.integer "team_id"
+  end
+
+  add_index "games_teams", ["game_id"], name: "index_games_teams_on_game_id"
+  add_index "games_teams", ["team_id"], name: "index_games_teams_on_team_id"
 
   create_table "leagues", force: :cascade do |t|
     t.string   "name"
@@ -55,6 +60,7 @@ ActiveRecord::Schema.define(version: 20150923194035) do
   end
 
   create_table "profiles", force: :cascade do |t|
+    t.string   "picture_url"
     t.string   "role",                 default: "player", null: false
     t.integer  "user_id"
     t.datetime "created_at",                              null: false
