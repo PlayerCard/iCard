@@ -1,4 +1,4 @@
-<%= form_for(@card) do |f| %>
+<%= form_for([@game, @card]) do |f| %>
 
   <% if @card.errors.any? %>
     <div id="error_explanation">
@@ -10,7 +10,9 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
+    <% end %>
+
+    <!-- # map lineups for both teams to get dropdown menu for ref -->
 
   <div class="field">
     <%= f.label :color %><br />
