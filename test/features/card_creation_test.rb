@@ -2,14 +2,17 @@ require "test_helper"
 
 feature "Creating Cards" do
   scenario "Referee can book a player for an offense" do
-    sign_in(:referee)
-    visit game_path(:game1)
-
-    click_on "Book Player"
-    fill_in 'color', with: 'Yellow'
-    fill_in 'comments', with: 'Did some not cool stuff'
-
-    click_on 'Book Player'
+    # Given a signed-in referee user
+    sign_in(:ref_1)
+    # When I click 'Book Player' and fill out the form
+    game = games(:game1)
+    visit game_path(game)
+    first("a[href='/games/#{game.id}/cards/new']").click
+    fill_in 'Color', with: 'Yellow'
+    fill_in 'Comments', with: 'Did some not cool stuff'
+    click_on 'Create Card'
+    save_and_open_page
+    # Then a player should get booked
     page.text.must_contain 'Player successfully booked with Yellow Card'
   end
 
