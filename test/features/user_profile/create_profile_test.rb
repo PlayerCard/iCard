@@ -2,19 +2,22 @@ require "test_helper"
 
 feature "Create A Profile" do
   scenario "submit form data to create new profile" do
-    # Given a user is signed in
-    sign_in(:player_1)
-
+    # Given a new user (without a profile)
+    visit '/'
+    click_on 'Sign up'
+    fill_in 'Email', with: 'newguy@example.com'
+    fill_in 'Password', with: 'password'
+    fill_in 'Password confirmation', with: 'password'
+    click_button "Sign up"
     # Given a completed new profile form
-    visit new_profile_path
-    # fill_in "Title", with: "Code Rails"
-    # fill_in "Body", with: "This is how I learned to make web apps."
-    # When I submit the form
-    click_on "Create profile"
-    # Then a new profile should be created and displayed
-    # page.text.must_include "profile was successfully created"
-    # page.text.must_include "how I learned to make web apps"
-    # page.has_css? "#author"
-    # page.text.must_include users(:user).email
+    fill_in "Name", with: "New Guy"
+    fill_in "Address 1", with: "line one"
+    fill_in "Address 2", with: "line two"
+    fill_in "City", with: "Bellingham"
+    fill_in "State", with: "WA"
+    fill_in "Zip", with: 98225
+    click_button "Create Profile"
+    page.must_have_content "Profile was successfully created"
+    page.must_have_content "NAME: New Guy"
   end
 end
