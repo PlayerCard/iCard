@@ -1,23 +1,23 @@
 team_member1:
-  user: player1
+  user: player_1
   team: lions
   in_line_up: true
   is_manager: false
 
 team_member2:
-  user: player2
+  user: player_2
   team: lions
   in_line_up: true
   is_manager: true
 
 team_member3:
-  user: player3
+  user: player_3
   team: tigers
   in_line_up: true
   is_manager: false
 
 team_member4:
-  user: player4
+  user: player_4
   team: tigers
   in_line_up: true
   is_manager: true

@@ -12,17 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :team, "Home Team" %><br />
-    <%= f.select :teams%>
+    <%= f.label :teams, "Teams" %><br />
+    <%= f.select :team_ids, options_for_select(@teams.map{|team| [team.name, team.id]}), {}, {multiple: true, size: 8} %>
   </div>
-  <div class="field">
-    <%= f.label :team, "Away Team"%><br />
-    <%= f.select :teams%>
-  </div>
-
   <div class="field">
     <%= f.label :game_time %><br />
-    <%= f.text_area :game_time %>
+    <%= datetime_select :game, :game_time %>
   </div>
   <div class="field">
     <%= f.label :game_location %><br />
@@ -30,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :referee %><br />
-    <%= f.text_area :referee %>
+    <%= f.select :referee_id, options_for_select(@referees.map{|ref| [ref.profile.name, ref.id]})%>
   </div>
   <div class="actions">
     <%= f.submit %>

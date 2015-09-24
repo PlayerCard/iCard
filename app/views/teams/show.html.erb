@@ -1,2 +1,26 @@
+<h1><%= @team.name %></h1>
+
+<table>
+  <tr>
+    <th><strong>Managers</strong></th>
+  </tr>
+  <% @managers.each do |manager| %>
+    <tr>
+      <td><%= link_to manager.user.profile.name, profile_path(manager.user) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<table>
+  <tr>
+    <th><strong>Players</strong></th>
+  </tr>
+  <% @players.each do |player| %>
+    <tr>
+      <td><%= link_to player.user.profile.name, profile_path(player.user) %></td>
+    </tr>
+  <% end %>
+</table>
+
 <%= link_to 'Edit', edit_team_path(@team) %> |
 <%= link_to 'Back', teams_path %>
