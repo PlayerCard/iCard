@@ -12,7 +12,7 @@ class TeamsController < ApplicationController
   def show
     @managers = @team.team_memberships.where(is_manager: true)
     @players = @team.team_memberships.where(is_manager: false)
-    @current_lineup = @team.team_memberships.where(in_line_up: true)
+    @current_lineup = @team.line_up
   end
 
   # GET /teams/new

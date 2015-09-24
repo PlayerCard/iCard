@@ -15,9 +15,9 @@
 
 <table>
   <tr><strong>Current Lineup</strong></tr>
-  <% @current_lineup.each do |lineup| %>
+  <% @current_lineup.each do |player| %>
     <tr>
-      <td><%= link_to lineup.user.profile.name, profile_path(lineup.user) %></td>
+      <td><%= link_to player.profile.name, profile_path(player) %></td>
     </tr>
   <% end %>
 </table>
