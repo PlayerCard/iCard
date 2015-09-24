@@ -14,6 +14,15 @@
 </table>
 
 <table>
+  <tr><strong>Current Lineup</strong></tr>
+  <% @current_lineup.each do |lineup| %>
+    <tr>
+      <td><%= link_to lineup.user.profile.name, profile_path(lineup.user) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<table>
   <tr>
     <th><strong>Players</strong></th>
   </tr>
@@ -25,4 +34,4 @@
 </table>
 
 <%= link_to 'Edit', edit_team_path(@team) %> |
-<%= link_to 'Back', teams_path %>
+<%= link_to 'Back', :back %>
