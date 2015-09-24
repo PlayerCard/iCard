@@ -8,7 +8,7 @@
   </tr>
   <% @managers.each do |manager| %>
     <tr>
-        <td><%= manager.user.profile.name %></td>
+      <td><%= link_to manager.user.profile.name, profile_path(manager.user) %></td>
     </tr>
   <% end %>
 </table>
@@ -17,11 +17,9 @@
   <tr>
     <th><strong>Players</strong></th>
   </tr>
-  <% @team.team_memberships.each do |membership| %>
+  <% @players.each do |player| %>
     <tr>
-      <% if membership.is_manager? == false %>
-        <td><%= membership.user.profile.name %></td>
-      <% end %>
+      <td><%= link_to player.user.profile.name, profile_path(player.user) %></td>
     </tr>
   <% end %>
 </table>
