@@ -8,16 +8,15 @@
     <div>
     <%= profile.role %>
     <div>
+    <%= "member: " if profile.user.teams.length > 0 %>   
     <% profile.user.teams.each do |team| %>
       <%= team.name %>
     <% end %>
     <div>
     <% profile.user.team_memberships.each do |player| %>
       <% if player.is_manager %>
-        <%= "team manager" %>
-        <% break %>
+        <%= "team manager: #{player.team.name}" %>
       <% end %>
     <% end %>
-    <div>
   </p>
 <% end %>
