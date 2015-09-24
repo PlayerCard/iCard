@@ -1,9 +1,9 @@
 game1:
   game_time: <%= Time.now %>
   game_location: Genesee
-  referee: 1
+  referee: ref_1
 
 game2:
   game_time: <%= Time.now %>
   game_location: Lower Woodland
-  referee: 1
+  referee: ref_1
