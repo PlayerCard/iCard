@@ -1,9 +1,5 @@
 class GamesController < ApplicationController
-<<<<<<< Updated upstream
   before_action :set_game, only: [:show, :update, :edit, :destroy]
-=======
-  before_action :set_game, only: [:show]
->>>>>>> Stashed changes
   before_action :set_league, only: []
   before_action :set_teams, only: [:new, :index]
   before_action :set_referees, only: :new

@@ -7,11 +7,11 @@ feature "Creating Cards" do
     # When I click 'Book Player' and fill out the form
     game = games(:game1)
     visit game_path(game)
+    save_and_open_page
     first("a[href='/games/#{game.id}/cards/new']").click
     fill_in 'Color', with: 'Yellow'
     fill_in 'Comments', with: 'Did some not cool stuff'
     click_on 'Create Card'
-    save_and_open_page
     # Then a player should get booked
     page.text.must_contain 'Player successfully booked with Yellow Card'
   end
