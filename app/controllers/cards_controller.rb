@@ -6,6 +6,7 @@ class CardsController < ApplicationController
   end
 
   def create
+    puts params.inspect
     @card = @game.cards.build(card_params)
 
     respond_to do |format|
