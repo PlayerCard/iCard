@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :set_user, only: [:show, :new, :create]
+  before_action :set_user, only: [:show, :new, :create, :edit]
 
   def index
     @profiles = Profile.all
@@ -11,6 +11,19 @@ class ProfilesController < ApplicationController
 
   def show
     @profile = @user.profile
+  end
+
+  def edit
+    @profile = Profile.find(params[:id])
+  end
+
+  def update
+    @profile = Profile.find(params[:id])
+    if @profile.update(profile_params)
+      redirect_to @profile, notice: 'League was successfully updated.'
+    else
+        render :edit
+    end
   end
 
   def create
