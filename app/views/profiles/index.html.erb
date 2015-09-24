@@ -4,7 +4,7 @@
   <p>
     <%= image_tag profile.picture.url(:thumb) %>
     <div>
-    <%= profile.name %>
+    <%= link_to "#{profile.name}", profile_path(profile.user) %>
     <div>
     <%= profile.role %>
     <div>
