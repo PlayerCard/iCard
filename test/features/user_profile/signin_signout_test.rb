@@ -14,7 +14,7 @@ feature "User Sign In & Out" do
     fill_in "Password", with: "password"
     click_on "Log in"
     page.text.must_include "Invalid email or password"
-    fill_in "Email", with: users(:user).email
+    fill_in "Email", with: users(:player_1).email
     fill_in "Password", with: "invalid"
     click_on "Log in"
     page.text.must_include "Invalid email or password"
