@@ -1,6 +1,6 @@
 require "test_helper"
 
-feature "Creating Gamess" do
+feature "Creating Games" do
   scenario "League can create new games" do
     login(:admin) #leagueAdmin? whats name of league admin class?
     visit league_path(:league1)
@@ -33,7 +33,7 @@ feature "Creating Gamess" do
   end
 
   scenario "Non-league admins can't see new game button" do
-    sign_in(:player)
+    sign_in(:player_1)
     visit league_path(:league1)
     page.text.wont_contain "Schedule New Game"
   end
