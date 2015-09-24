@@ -14,6 +14,7 @@ class CardsController < ApplicationController
   end
 
   def new
+    @card = Card.new
   end
 
   def show
@@ -32,9 +33,10 @@ class CardsController < ApplicationController
   end
 
   private
-    def set_game
-      @game = Game.find(params[:id])
-    end
+
+  def set_game
+    @game = Game.find(params[:game_id])
+  end
 
     # def set_player
     #   @player = Player.find(params[:id])
