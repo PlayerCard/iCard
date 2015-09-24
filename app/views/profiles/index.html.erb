@@ -2,13 +2,22 @@
 
 <% @profiles.each do |profile| %>
   <p>
-    <%= profile.name %>
+    <%= image_tag profile.picture.url(:thumb) %>
+    <div>
+    <%= link_to "#{profile.name}", profile_path(profile.user) %>
+    <div>
     <%= profile.role %>
+    <div>
     <% profile.user.teams.each do |team| %>
       <%= team.name %>
     <% end %>
+    <div>
     <% profile.user.team_memberships.each do |player| %>
-      <%= player.is_manager %>
+      <% if player.is_manager %>
+        <%= "team manager" %>
+        <% break %>
+      <% end %>
     <% end %>
+    <div>
   </p>
 <% end %>

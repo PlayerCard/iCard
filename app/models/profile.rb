@@ -5,6 +5,6 @@ class Profile < ActiveRecord::Base
     large: "500x500#{}",
     medium: "300x300#{}",
     thumb: "100x100#{}"
-  }, default_url: "https://s3.amazonaws.com/icardbucket/profiles/pictures/000/000/001/original/profile-default.png"
+  }, default_url: "https://s3.amazonaws.com/icardbucket/profiles/pictures/000/000/001/thumb/profile-default.png"
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\Z/
 end
