@@ -7,7 +7,6 @@ feature "Creating Cards" do
     # When I click 'Book Player' and fill out the form
     game = games(:game1)
     visit game_path(game)
-    save_and_open_page
     first("a[href='/games/#{game.id}/cards/new']").click
     fill_in 'Color', with: 'Yellow'
     fill_in 'Comments', with: 'Did some not cool stuff'
