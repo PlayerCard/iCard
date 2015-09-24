@@ -15,7 +15,7 @@ feature "Creating Cards" do
 
 
   scenario "Can't book player with incomplete Card form" do
-    sign_in(:referee)
+    sign_in(:ref_1)
     visit game_path(:game1)
 
     click_on "Book Player"
@@ -28,12 +28,12 @@ feature "Creating Cards" do
 
 
   scenario "Non-referee users cannot create cards" do
-    sign_in(:player)
-    visit new_game_card_path(:game1)
+    sign_in(:player_1)
+    visit new_game_card_path(games(:game1))
+    # Below assertions will depend on authorization policies
+    page.must_have_content 'cannot card players'
 
-    page.text.must_contain 'cannot card players'
-
-    visit game_path(:game1)
+    visit game_path(games(:game1))
 
     page.text.wont_contain 'Book Player'
   end
