@@ -19,6 +19,7 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'paperclip'
 gem 'aws-sdk', '< 2.0'
+gem 'faker'
 
 
 group :development, :test do
@@ -31,5 +32,4 @@ end
 group :development do
   gem 'spring'
   gem 'web-console', '~> 2.0'
-  gem 'faker'
 end
