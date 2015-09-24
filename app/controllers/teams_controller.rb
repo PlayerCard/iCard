@@ -10,6 +10,8 @@ class TeamsController < ApplicationController
   # GET /teams/1
   # GET /teams/1.json
   def show
+    @managers = @team.team_memberships.where(is_manager: true)
+    @players = @team.team_memberships.where(is_manager: false)
   end
 
   # GET /teams/new

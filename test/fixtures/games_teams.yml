@@ -1,15 +1,15 @@
-game_team_1_1:
-  game_id: 1
-  team_id: 1
+game_1_team_home:
+  game_id: game1
+  team_id: lions
 
-game_team_1_2:
-  game_id: 1
-  team_id: 2
+game_1_team_away:
+  game_id: game1
+  team_id: tigers
 
-game_team_2_1:
-  game_id: 2
-  team_id: 2
+game_2_team_home:
+  game_id: game2
+  team_id: tigers
 
-game_team_2_2:
-  game_id: 2
-  team_id: 1
+game_2_team_away:
+  game_id: game2
+  team_id: lions
