@@ -1,6 +1,8 @@
 class GamesController < ApplicationController
-  before_action :set_game, only: []
+  before_action :set_game, only: [:show, :update, :edit, :destroy]
   before_action :set_league, only: []
+  before_action :set_teams, only: :new
+  before_action :set_referees, only: :new
 
   def create
     @game = Game.new(game_params)
@@ -58,8 +60,16 @@ class GamesController < ApplicationController
       @game = Game.find(params[:id])
     end
 
+    def set_teams
+      @teams = Team.all
+    end
+
+    def set_referees
+      @referees =  Profile.where(role: 'referee').map{|profile| profile.user}
+    end
+
     def game_params
-      params.require(:game).permit(:team, :team, :game_time, :game_location, :referee)
+      params.require(:game).permit(:game_time, :game_location, :referee_id, team_ids: [])
     end
 
 end

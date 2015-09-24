@@ -1,25 +1,26 @@
 
 <h2>
-  <%= @game.team.last.name %> @ <%= @game.team.first.name %>
+  <%= @game.teams.last.name %> @ <%= @game.teams.first.name %>
 </h2>
 <p>
   Location:  <%= @game.game_location %> <br/>
   Start Time:  <%= @game.game_time %> <br/>
-  Referee:  <%= @game.referee.name %>
+  Referee:  <%= @game.referee.profile.name %>
 </p>
 <div class="team_titles">
-  <%= link_to @game.team.first.name, @game.team.first %>
-  <%= link_to @game.team.last.name, @game.team.last %>
+  <%= link_to @game.teams.first.name, @game.teams.first %>
+  <%= link_to @game.teams.last.name, @game.teams.last %>
 </div>
+
 <div class="team.first team">
-  <% @game.team.last.line_up.each do |player| %>
+  <% @game.teams.last.line_up.each do |player| %>
     <div>
-    <%= link_to player_path player do %>
-      <%= image_tag player.profile.picture_url %>
+    <%= link_to profile_path player do %>
+      <%= image_tag player.profile.picture.url(:medium) %>
     <% end %>
-    <%= player.name %>
-    <% if current_user.role == "referee"%>
-      <%= link_to 'Book Player', new_game_card_path(@game.id)%>
+    <%= player.profile.name %>
+    <% if current_user.present? && current_user.profile.role == "referee"%>
+      <%= link_to 'Book Player', new_game_card_path(@game.id) %>
     <% end %>
     </div>
   <% end %>
@@ -27,14 +28,14 @@
 </div>
 
 <div class="team.last team">
-  <%= @game.home.team.line_up.each do |player| %>
+  <% @game.teams.first.line_up.each do |player| %>
     <div>
-    <% link_to player_path player do %>
-      <% image_tag player.profile.picture_url %>
+    <%= link_to profile_path player do %>
+      <%= image_tag player.profile.picture.url(:medium) %>
     <% end %>
-    <%= player.name %>
-    <% if current_user.role == "referee"%>
-      <%= link_to 'Book Player', new_game_card_path(@game.id)%>
+    <%= player.profile.name %>
+    <% if current_user.present? && current_user.profile.role == "referee" %>
+      <%= link_to 'Book Player', new_game_card_path(@game.id) %>
     <% end %>
     </div>
   <% end %>
