@@ -62,7 +62,6 @@ ActiveRecord::Schema.define(version: 20150924182822) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.string   "picture_url"
     t.string   "role",                 default: "player", null: false
     t.integer  "user_id"
     t.datetime "created_at",                              null: false
