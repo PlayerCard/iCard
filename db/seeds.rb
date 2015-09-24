@@ -46,3 +46,12 @@ end
     player.team_memberships.create!(team: team, in_line_up: false, is_manager: false)
   end
 end
+
+def create_game
+  ref = Profile.where(role: 'referee').first.user
+  Game.create(game_time: Time.now, game_location: Faker::Address.city, referee_id: ref.id, teams: Team.all.sample(2))
+end
+
+5.times do
+  create_game
+end
