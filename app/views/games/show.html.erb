@@ -6,7 +6,7 @@
 
 <p>
   Location:  <%= @game.game_location %> <br/>
-  Start Time:  <%= @game.game_time %> <br/>
+  Start Time:  <%= @game.game_time.strftime("%-d/%-m/%y: %H:%M") %> <br/>
   Referee:  <%= @game.referee.profile.name %>
 </p>
 <div class="team_titles">
