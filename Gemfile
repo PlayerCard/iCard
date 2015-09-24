@@ -14,7 +14,7 @@ gem 'rubocop'
 gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'simplecov', :require => false, :group => :test
-gem 'sqlite3'
+gem 'pg'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'paperclip'
@@ -25,6 +25,7 @@ group :development, :test do
   gem 'byebug'
   gem 'minitest-rails-capybara'
   gem 'dotenv-rails'
+  gem 'sqlite3'
 end
 
 group :development do
