@@ -8,4 +8,11 @@
 <% @cards.each do |card| %>
   <p><%= card.color %> | <%= card.created_at.strftime("Issued on %m/%d/%y") %></p>
 <% end %>
+
+<p><strong>Team List</strong></p>
+
+<% @memberships.each do |membership| %>
+  <p><%= link_to membership.team.name, membership.team %></p>
+<% end %>
+
 <%= link_to 'Back', :back %>
