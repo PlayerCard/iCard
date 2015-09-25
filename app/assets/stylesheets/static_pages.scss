@@ -1,3 +1,35 @@
-// Place all the styles related to the static_pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+header {
+  background: blue;
+  padding: 15px 0px;
+
+  nav.main_nav {
+    float: left;
+
+    a, a:visited {
+      color: white;
+    }
+  }
+
+  nav.login_nav {
+    float: right;
+    color: white;
+
+    a {
+      color: white;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+      
+      &:visited {
+        color: white;
+      }
+    }
+  }
+}
+
+main {
+  nav.main_nav {
+    color: black;
+  }
+}
