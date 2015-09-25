@@ -40,10 +40,22 @@ feature "Teams have crud actions" do
     page.wont_have_content "Lions"
   end
 
-  scenario "edit lineup and submit successfully " do
+  scenario "edit lineup and submit successfully" do
     visit teams_path
     click_on "Tigers"
     click_on "Edit team and lineup"
     save_and_open_page
+    uncheck "team_team_memberships_attributes_0_in_line_up"
+    click_on "Update Team"
+    page.must_have_content "Team was successfully updated."
+  end
+
+  scenario "submit lineup with too many players gives error" do
+    visit teams_path
+    click_on "Tigers"
+    click_on "Edit team and lineup"
+    check "team_team_memberships_attributes_5_in_line_up"
+    click_on "Update Team"
+    page.must_have_content "Cannot select more than 20 players for lineup, you selected 21."
   end
 end
