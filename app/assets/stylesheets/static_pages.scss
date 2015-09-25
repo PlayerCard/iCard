@@ -16,11 +16,11 @@ header {
 
     a {
       color: white;
-      
+
       &:hover {
         text-decoration: underline;
       }
-      
+
       &:visited {
         color: white;
       }
@@ -29,7 +29,14 @@ header {
 }
 
 main {
-  nav.main_nav {
-    color: black;
+  h1, h2 {
+    color: white;
+    text-align: center;
   }
 }
+
+body {
+  background: url("http://i443.photobucket.com/albums/qq159/tadpolefarm/Mbombela%20Stadium/Mbombela_Stadium_Panorama_night.jpg~original") no-repeat center top;
+  background-size: 2000px auto;
+}
+

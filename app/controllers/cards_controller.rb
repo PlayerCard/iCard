@@ -17,14 +17,6 @@ class CardsController < ApplicationController
   def show
   end
 
-  def edit
-    if @card.update(card_params)
-      redirect_to @card, notice: 'Game was successfully updated.'
-    else
-      render :edit
-    end
-  end
-
   private
 
   def set_game
