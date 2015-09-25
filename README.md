@@ -21,7 +21,7 @@ Also the referee can mark disciplinary actions in iCard and the league can mark 
 ## Authors
 
 * Ronald Kinch (https://github.com/ronaldkinch)
-* Scott MacPherson (https://github.com/scottmacphersonmusic)
+* Scott Macpherson (https://github.com/scottmacphersonmusic)
 * John Notrz (https://github.com/JohnNortz)
 * Garret Sand (https://github.com/vnmnd)
 * Matthew Yang (https://github.com/yang70)
