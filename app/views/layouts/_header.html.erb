@@ -1,8 +1,19 @@
-<p><% if current_user.present? %>
-  <strong>Signed in as: </strong><%= current_user.email %> |
-  <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to "Sign in", new_user_session_path %> |
-  <%= link_to "Sign up", new_user_registration_path %>
-<% end %>
-| <%= link_to "Home", root_path %></p>
+<header>
+  <div class="container">
+    <nav class="login_nav">
+      <% if current_user.present? %>
+        <strong>Signed in as: </strong><%= current_user.email %> |
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign in", new_user_session_path %> |
+        <%= link_to "Sign up", new_user_registration_path %>
+      <% end %>
+    </nav>
+    <nav class="main_nav">
+      <%= link_to "Home", root_path %>
+      <%= link_to "Teams", teams_path %>
+      <%= link_to "Users", profiles_path %>
+      <%= link_to "Games", games_path %>
+    </nav>
+  </div>
+</header>
