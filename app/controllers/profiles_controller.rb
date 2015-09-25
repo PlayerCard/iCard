@@ -12,6 +12,7 @@ class ProfilesController < ApplicationController
   def show
     @profile = Profile.find(params[:id])
     @cards = Card.all.where(player_id: @profile.user_id)
+    @team_member = @profile.user.team_memberships.all
   end
 
   def edit
@@ -23,7 +24,7 @@ class ProfilesController < ApplicationController
     if @profile.update(profile_params)
       redirect_to @profile, notice: 'Profile was successfully updated.'
     else
-        render :edit
+      render :edit
     end
   end
 

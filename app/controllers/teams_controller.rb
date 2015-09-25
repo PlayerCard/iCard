@@ -11,7 +11,8 @@ class TeamsController < ApplicationController
   # GET /teams/1.json
   def show
     @managers = @team.team_memberships.where(is_manager: true)
-    @players = @team.team_memberships.where(is_manager: false)
+    @current_lineup = @team.line_up
+    @not_in_lineup = @team.team_memberships.where(in_line_up: false)
   end
 
   # GET /teams/new
@@ -42,13 +43,17 @@ class TeamsController < ApplicationController
   # PATCH/PUT /teams/1
   # PATCH/PUT /teams/1.json
   def update
-    respond_to do |format|
+    in_lineup = params[:team][:team_memberships_attributes]
+    lineup_count = 0
+    in_lineup.each { |player| lineup_count += 1 if player[1][:in_line_up] == '1' }
+    if lineup_count > 20
+      flash.now[:alert] = "Cannot select more than 20 players for lineup, you selected #{lineup_count}."
+      render :edit
+    else
       if @team.update(team_params)
-        format.html { redirect_to @team, notice: 'Team was successfully updated.' }
-        format.json { render :show, status: :ok, location: @team }
+        redirect_to @team, notice: 'Team was successfully updated.'
       else
-        format.html { render :edit }
-        format.json { render json: @team.errors, status: :unprocessable_entity }
+        render :edit
       end
     end
   end
@@ -58,19 +63,20 @@ class TeamsController < ApplicationController
   def destroy
     @team.destroy
     respond_to do |format|
-      format.html { redirect_to teams_url, notice: 'Team was successfully destroyed.' }
+      format.html { redirect_to teams_url, notice: 'Team was successfully deleted.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_team
-      @team = Team.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def team_params
-      params[:team]
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_team
+    @team = Team.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def team_params
+    params.require(:team).permit(:name, team_memberships_attributes: [:id, :player_id, :in_line_up])
+  end
 end

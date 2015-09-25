@@ -9,6 +9,20 @@
       <% end %>
       </ul>
     </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %><br/>
+      <%= f.text_field :name %>
+    </div>
+
+  <h3>Edit lineup</h3>
+  <p><strong>Select players for lineup - Limit 20</strong></p>
+  <%= f.fields_for :team_memberships do |builder| %>
+    <p><%= builder.object.user.profile.name %>
+
+    <%= builder.label :in_line_up %>
+    <%= builder.check_box :in_line_up %></p>
   <% end %>
 
   <div class="actions">

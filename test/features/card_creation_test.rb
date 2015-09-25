@@ -15,7 +15,6 @@ feature "Creating Cards" do
     page.text.must_contain 'Player successfully booked with Yellow Card'
   end
 
-
   scenario "Can't book player with incomplete Card form" do
     # Given a signed-in ref on a game page
     sign_in(:ref_1)
@@ -29,7 +28,6 @@ feature "Creating Cards" do
     # Then the player shouldn't be booked
     page.text.must_contain 'error'
   end
-
 
   scenario "Non-referee users cannot create cards" do
     sign_in(:player_1)
