@@ -35,4 +35,15 @@ feature "Games have crud actions" do
     page.must_have_content "Game was successfully updated."
     page.must_have_content "Location: Narnia"
   end
+
+  scenario "delete games" do
+    # Given an existing game show page
+    sign_in
+    visit game_path(games(:game1))
+    # When I click delete
+    click_on "Delete"
+    # The game is deleted
+    page.must_have_content "Game was successfully deleted."
+    page.wont_have_content "Lions VS. Tigers"
+  end
 end

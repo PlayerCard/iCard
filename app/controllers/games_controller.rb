@@ -8,6 +8,9 @@ class GamesController < ApplicationController
     @games = Game.all
   end
 
+  def show
+  end
+
   def new
     @game = Game.new
   end
@@ -32,12 +35,9 @@ class GamesController < ApplicationController
     end
   end
 
-  def show
-  end
-
   def destroy
     @game.delete
-    redirect_to league_games_path, notice: 'Post was successfully destroyed.'
+    redirect_to games_path, notice: 'Game was successfully deleted.'
   end
 
   private

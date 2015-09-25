@@ -1,6 +1,10 @@
+<div>
+<%= link_to 'Back', games_path %> |
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Delete', @game, method: :delete,
+    data: { confirm: 'Are you sure?' } %>
+</div>
 
-<p><%= link_to 'Back', games_path %>|
-<p><%= link_to 'Edit', edit_game_path(@game) %></p>
 <h2>
   <%= link_to @game.teams.last.name, @game.teams.last %> @ <%= link_to @game.teams.first.name, @game.teams.first %>
 </h2>
@@ -46,4 +50,3 @@
     </div>
   <% end %>
 </div>
-
