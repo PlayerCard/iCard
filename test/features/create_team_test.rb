@@ -44,7 +44,6 @@ feature "Teams have crud actions" do
     visit teams_path
     click_on "Tigers"
     click_on "Edit team and lineup"
-    save_and_open_page
     uncheck "team_team_memberships_attributes_0_in_line_up"
     click_on "Update Team"
     page.must_have_content "Team was successfully updated."
