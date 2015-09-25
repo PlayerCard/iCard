@@ -10,7 +10,7 @@ admin_profile:
 
 player_1_profile:
   user: player_1
-  name: Faker::Name.name
+  name: John Nortz
   address_1: Faker::Address.street_address
   address_2: Faker::Address.secondary_address
   city: Faker::Address.city
@@ -20,7 +20,7 @@ player_1_profile:
 
 player_2_profile:
   user: player_2
-  name: Faker::Name.name
+  name: Kevin Townsend
   address_1: Faker::Address.street_address
   address_2: Faker::Address.secondary_address
   city: Faker::Address.city
@@ -30,7 +30,7 @@ player_2_profile:
 
 player_3_profile:
   user: player_3
-  name: Faker::Name.name
+  name: Matt Yang
   address_1: Faker::Address.street_address
   address_2: Faker::Address.secondary_address
   city: Faker::Address.city
@@ -40,7 +40,7 @@ player_3_profile:
 
 player_4_profile:
   user: player_4
-  name: Faker::Name.name
+  name: Clint Dempsey
   address_1: Faker::Address.street_address
   address_2: Faker::Address.secondary_address
   city: Faker::Address.city
@@ -50,7 +50,7 @@ player_4_profile:
 
 ref_1_profile:
   user: ref_1
-  name: Faker::Name.name
+  name: Ronald Kinch
   address_1: Faker::Address.street_address
   address_2: Faker::Address.secondary_address
   city: Faker::Address.city
@@ -60,7 +60,7 @@ ref_1_profile:
 
 ref_2_profile:
   user: ref_2
-  name: Faker::Name.name
+  name: Brook Riggio
   address_1: Faker::Address.street_address
   address_2: Faker::Address.secondary_address
   city: Faker::Address.city
