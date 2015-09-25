@@ -1,0 +1,17 @@
+Metrics/MethodLength:
+  CountComments: false  # count full line comments?
+  Max: 15
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/AbcSize:
+  # The ABC size is a calculated magnitude, so this number can be a Fixnum or
+  # a Float.
+  Max: 20
+
+StringLiterals:
+  Enabled: false
+
+Documentation:
+  Enabled: false
