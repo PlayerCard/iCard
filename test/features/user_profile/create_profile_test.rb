@@ -15,7 +15,7 @@ feature "Create A Profile" do
     fill_in "Address 2", with: "line two"
     fill_in "City", with: "Bellingham"
     fill_in "State", with: "WA"
-    fill_in "Zip", with: 98225
+    fill_in "Zip", with: 98_225
     click_button "Create Profile"
     page.must_have_content "Profile was successfully created"
     page.must_have_content "NAME: New Guy"
