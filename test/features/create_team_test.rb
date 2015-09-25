@@ -28,4 +28,15 @@ feature "Teams have crud actions" do
     page.must_have_content "Team was successfully updated."
     page.must_have_content "Leopards"
   end
+
+  scenario "delete a team" do
+    # Given an signed-in user and an existing team
+    sign_in
+    visit team_path(teams(:lions))
+    # When I click delete
+    click_on "Delete"
+    # The team should be deleted
+    page.must_have_content "Team was successfully deleted."
+    page.wont_have_content "Lions"
+  end
 end
