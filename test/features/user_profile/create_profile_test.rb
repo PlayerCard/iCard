@@ -18,7 +18,7 @@ feature "Create A Profile" do
     fill_in "Zip", with: 98_225
     click_button "Create Profile"
     page.must_have_content "Profile was successfully created"
-    page.must_have_content "NAME: New Guy"
+    page.must_have_content "New Guy"
   end
 
   scenario "wont create invalid profile" do
