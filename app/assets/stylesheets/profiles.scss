@@ -14,19 +14,67 @@
     clear: left;
   }
 
-  .player_image {
-    width: 40%;
-    float: left;
-    
-    img {
-      display: block;
-      position: relative;
-      top: 0;
-      margin: 0 auto;
-    }
-  }
-
   h2 {
     margin-top: 0;
   }
 }
+
+.player_card {
+  border: solid 5px blue;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 660px;
+  margin: 0 auto;
+  margin-top: 10px;
+  background: white;
+
+  .player_info {
+    padding-left: 10px;
+
+    .yellow_cards .card {
+      background: yellow;
+      color: black;
+    }
+
+    .red_cards .card {
+      background: red;
+      color: white;
+    }
+
+    .black_cards .card {
+      background: black;
+      color: white;
+    }
+
+    .card_list {
+      width: 31%;
+      overflow: scroll-y;
+      .card {
+        display: block;
+        text-align: center;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.player, .player_card {
+  .player_image {
+    width: 40%;
+    float: left;
+    overflow: hidden;
+    text-align: center;
+    
+    // img {
+    //   display: block;
+    //   position: relative;
+    //   top: 0;
+    //   margin: 0 auto;
+    // }
+  }
+}
+

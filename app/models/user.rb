@@ -7,5 +7,5 @@ class User < ActiveRecord::Base
   has_many :team_memberships
   has_many :teams, through: :team_memberships
   has_many :game_players
-  has_many :cards
+  has_many :cards, foreign_key: 'player_id'
 end
