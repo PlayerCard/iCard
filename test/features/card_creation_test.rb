@@ -5,12 +5,10 @@ feature "Creating Cards" do
     # Given a signed-in referee user
     sign_in(:ref_1)
     # When I click 'Book Player' and fill out the form
-    game = games(:game1)
-    visit game_path(game)
+    visit game_path(games(:game1))
     click_on 'Book A Player'
-
-    select 'Alvina Bechtelar', :from => 'card_player_id'
-    select 'Yellow', :from => 'card_color'
+    select 'Matt Yang', from: 'card_player_id'
+    select 'Yellow', from:'card_color'
     fill_in 'Comments', with: 'Did some not cool stuff'
     click_on 'Create Card'
     # Then a player should get booked
