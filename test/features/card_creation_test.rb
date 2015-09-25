@@ -8,7 +8,7 @@ feature "Creating Cards" do
     visit game_path(games(:game1))
     click_on 'Book A Player'
     select 'Matt Yang', from: 'card_player_id'
-    select 'Yellow', from:'card_color'
+    select 'Yellow', from: 'card_color'
     fill_in 'Comments', with: 'Did some not cool stuff'
     click_on 'Create Card'
     # Then a player should get booked
@@ -23,7 +23,7 @@ feature "Creating Cards" do
     # When click on 'book player' and submit invalid params
     click_on 'Book A Player'
 
-    select 'Yellow', :from => 'card_color'
+    select 'Yellow', from:'card_color'
     fill_in 'Comments', with: ''
     click_on 'Create Card'
     # Then the player shouldn't be booked
