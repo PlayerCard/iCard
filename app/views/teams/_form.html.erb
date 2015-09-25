@@ -9,7 +9,12 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %><br/>
+      <%= f.text_field :name %>
+    </div>
 
   <h3>Edit lineup</h3>
   <%= f.fields_for :team_memberships do |builder| %>

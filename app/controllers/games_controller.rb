@@ -1,8 +1,8 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :update, :edit, :destroy]
   before_action :set_league, only: []
-  before_action :set_teams, only: [:new, :index]
-  before_action :set_referees, only: :new
+  before_action :set_teams, only: [:show, :new, :index, :edit, :update]
+  before_action :set_referees, only: [:new, :edit, :update]
 
   def create
     @game = Game.new(game_params)
@@ -69,7 +69,7 @@ class GamesController < ApplicationController
     end
 
     def game_params
-      params.require(:game).permit(:game_time, :game_location, :referee_id, team_ids: [])
+      params.require(:game).permit(:game_time, :game_location, :referee_id, team_ids: [], home_player_ids: [], away_player_ids: [])
     end
 
 end

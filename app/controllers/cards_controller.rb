@@ -1,19 +1,28 @@
 class CardsController < ApplicationController
   before_action :set_game, only: [:new, :create]
 
+  def new
+    @card = Card.new
+  end
+
   def create
     @card = @game.cards.build(card_params)
 
     respond_to do |format|
       if @card.save
-        format.json { render json: @card, status: 200 }
+        format.html do
+          redirect_to game_path(@game)
+          format.json { render json: @card, status: 200 }
+        end
       else
+        format.html { render :new }
         format.json { render json: @card.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def new
+    @card = Card.new
   end
 
   def show
@@ -32,15 +41,12 @@ class CardsController < ApplicationController
   end
 
   private
+
     def set_game
-      @game = Game.find(params[:id])
+      @game = Game.find(params[:game_id])
     end
 
-    # def set_player
-    #   @player = Player.find(params[:id])
-    # end
-
     def card_params
-      params.require(:card).permit(:color, :comments, :user_id)
+      params.require(:card).permit(:color, :comments, :game_id, :player_id)
     end
 end

@@ -1,17 +1,15 @@
-<p id="notice"><%= notice %></p>
-
 <%= image_tag @profile.picture.url(:medium) %>
 
 <p><b>NAME: </b><%= @profile.name %></p>
 
 <p><strong>Cards list</strong></p>
 <% @cards.each do |card| %>
-  <p><%= card.color %> | <%= card.created_at.strftime("Issued on %m/%d/%y") %></p>
+  <p><%= link_to card.color, game_path(card.game) %> | <%= card.created_at.strftime("Issued on %m/%d/%y") %></p>
+  <p><%= card.comments %></p>
 <% end %>
 
-<p><strong>Team List</strong></p>
-
-<% @memberships.each do |membership| %>
+<p><strong>Teams list</strong></p>
+<% @team_member.each do |membership| %>
   <p><%= link_to membership.team.name, membership.team %></p>
 <% end %>
 

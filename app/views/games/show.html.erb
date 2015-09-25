@@ -1,8 +1,11 @@
 
-<p><%= link_to 'Back', games_path %></p>
+<p><%= link_to 'Back', games_path %>|
+<%= link_to 'Edit', edit_game_path(@game) %></p>
 <h2>
   <%= link_to @game.teams.last.name, @game.teams.last %> @ <%= link_to @game.teams.first.name, @game.teams.first %>
 </h2>
+
+  <%= link_to 'Book A Player', new_game_card_path(@game.id) %>
 
 <p>
   Location:  <%= @game.game_location %> <br/>
@@ -14,7 +17,8 @@
   <%= link_to @game.teams.last.name, @game.teams.last %>
 </div>
 
-<div class="team.first team">
+<div class="team.last team">
+
   <% @game.teams.last.line_up.each do |player| %>
     <div>
     <%= link_to profile_path player do %>
@@ -29,7 +33,7 @@
 
 </div>
 
-<div class="team.last team">
+<div class="team.first team">
   <% @game.teams.first.line_up.each do |player| %>
     <div>
     <%= link_to profile_path player do %>
@@ -42,3 +46,4 @@
     </div>
   <% end %>
 </div>
+
