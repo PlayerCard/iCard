@@ -1,21 +1,46 @@
-<%= image_tag @profile.picture.url(:medium) %>
+<div class="container">
+  <div class="player_card clearfix">
+    
+    <div class="player_image">
+      <%= image_tag @profile.picture.url(:medium) %>
+    </div>  
+    
+    <div class="left player_info">
+      <h3><%= @profile.name %></h3>
 
-<p><b>NAME: </b><%= @profile.name %></p>
+      <p><strong>Teams list</strong></p>
+      <% @team_member.each do |membership| %>
+        <p><%= link_to membership.team.name, membership.team %></p>
+      <% end %>
 
-<p><strong>Cards list</strong></p>
-<% @cards.each do |card| %>
-  <p><span class="<%= card.color %>">
-  <%= link_to card.color, game_path(card.game) %></span>
-  | <%= card.created_at.strftime("Issued on %m/%d/%y") %></p>
-  <p><%= card.comments %></p>
-<% end %>
+      <p><strong>Cards list</strong></p>
+      <div class="yellow_cards card_list left">
+        <% @yellow_cards.each do |card| %>
+          <%= link_to game_path(card.game), class: "card" do %>
+            <%= card.created_at.strftime("Issued on %m/%d/%y") %>
+          <% end %>
+        <% end %>
+      </div>
 
-<p><strong>Teams list</strong></p>
-<% @team_member.each do |membership| %>
-  <p><%= link_to membership.team.name, membership.team %></p>
-<% end %>
+      <div class="red_cards card_list left">
+        <% @red_cards.each do |card| %>
+          <%= link_to game_path(card.game), class: "card" do %>
+            <%= card.created_at.strftime("Issued on %m/%d/%y") %>
+          <% end %>
+        <% end %>
+      </div>
 
-<div>
-  <%= link_to 'Back', :back %> |
-  <%= link_to 'Edit', edit_profile_path(@profile) %>
+      <div class="black_cards card_list left">
+        <% @black_cards.each do |card| %>
+          <%= link_to game_path(card.game), class: "card" do %>
+            <%= card.created_at.strftime("Issued on %m/%d/%y") %>
+          <% end %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+  <div>
+    <%= link_to 'Edit', edit_profile_path(@profile) %>
+  </div>
 </div>
