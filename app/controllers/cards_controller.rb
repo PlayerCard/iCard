@@ -1,7 +1,12 @@
 class CardsController < ApplicationController
   before_action :set_game, only: [:new, :create]
 
+  def new
+    @card = Card.new
+  end
+
   def create
+    puts params.inspect
     @card = @game.cards.build(card_params)
 
     respond_to do |format|
@@ -37,16 +42,12 @@ class CardsController < ApplicationController
   end
 
   private
+
     def set_game
-      puts params.inspect
       @game = Game.find(params[:game_id])
     end
 
-    # def set_player
-    #   @player = Player.find(params[:id])
-    # end
-
     def card_params
-      params.require(:card).permit(:color, :comments, :player_id)
+      params.require(:card).permit(:color, :comments, :game_id, :player_id)
     end
 end
