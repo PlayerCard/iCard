@@ -11,9 +11,9 @@ class ProfilesController < ApplicationController
 
   def show
     @profile = Profile.find(params[:id])
-    @yellow_cards = @profile.user.cards.select{|card| card.color == 'yellow' || card.color == 'Yellow'}
-    @red_cards = @profile.user.cards.select{|card| card.color == 'red' || card.color == 'Red'}
-    @black_cards = @profile.user.cards.select{|card| card.color == 'black' || card.color == 'Black'}
+    @yellow_cards = @profile.user.cards.select { |card| card.color == 'yellow' || card.color == 'Yellow' }
+    @red_cards = @profile.user.cards.select { |card| card.color == 'red' || card.color == 'Red' }
+    @black_cards = @profile.user.cards.select { |card| card.color == 'black' || card.color == 'Black' }
     @team_member = @profile.user.team_memberships.all
   end
 
