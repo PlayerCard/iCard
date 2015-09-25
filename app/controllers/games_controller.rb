@@ -52,24 +52,26 @@ class GamesController < ApplicationController
   end
 
   private
-    def set_league
-      @league = League.find(params[:id])
-    end
 
-    def set_game
-      @game = Game.find(params[:id])
-    end
+  def set_league
+    @league = League.find(params[:id])
+  end
 
-    def set_teams
-      @teams = Team.all
-    end
+  def set_game
+    @game = Game.find(params[:id])
+  end
 
-    def set_referees
-      @referees =  Profile.where(role: 'referee').map{|profile| profile.user}
-    end
+  def set_teams
+    @teams = Team.all
+  end
 
-    def game_params
-      params.require(:game).permit(:game_time, :game_location, :referee_id, team_ids: [], home_player_ids: [], away_player_ids: [])
-    end
+  def set_referees
+    @referees = Profile.where(role: 'referee').map(&:user)
+  end
 
+  def game_params
+    params.require(:game).permit(:game_time, :game_location, :referee_id,
+                                 team_ids: [], home_player_ids: [],
+                                 away_player_ids: [])
+  end
 end

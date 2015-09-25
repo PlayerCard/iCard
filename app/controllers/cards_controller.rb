@@ -21,10 +21,6 @@ class CardsController < ApplicationController
     end
   end
 
-  def new
-    @card = Card.new
-  end
-
   def show
   end
 
@@ -42,11 +38,11 @@ class CardsController < ApplicationController
 
   private
 
-    def set_game
-      @game = Game.find(params[:game_id])
-    end
+  def set_game
+    @game = Game.find(params[:game_id])
+  end
 
-    def card_params
-      params.require(:card).permit(:color, :comments, :game_id, :player_id)
-    end
+  def card_params
+    params.require(:card).permit(:color, :comments, :game_id, :player_id)
+  end
 end

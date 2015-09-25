@@ -11,7 +11,6 @@ class Game < ActiveRecord::Base
   end
 
   def home_player_ids
-
   end
 
   def home_player_ids=(player_ids)
@@ -21,7 +20,6 @@ class Game < ActiveRecord::Base
   end
 
   def away_player_ids
-
   end
 
   def away_player_ids=(player_ids)
@@ -29,5 +27,4 @@ class Game < ActiveRecord::Base
       game_players.create(user_id: player_id, team_id: teams.last.id)
     end
   end
-
 end
