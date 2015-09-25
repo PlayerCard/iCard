@@ -9,4 +9,22 @@ class Game < ActiveRecord::Base
       game_player.create(game: @game, player: player, team: team)
     end
   end
+
+  def home_player_ids
+  end
+
+  def home_player_ids=(player_ids)
+    player_ids.each do |player_id|
+      game_players.create(user_id: player_id, team_id: teams.first.id)
+    end
+  end
+
+  def away_player_ids
+  end
+
+  def away_player_ids=(player_ids)
+    player_ids.each do |player_id|
+      game_players.create(user_id: player_id, team_id: teams.last.id)
+    end
+  end
 end

@@ -6,13 +6,16 @@ class CardsController < ApplicationController
   end
 
   def create
-    puts params.inspect
     @card = @game.cards.build(card_params)
 
     respond_to do |format|
       if @card.save
-        format.json { render json: @card, status: 200 }
+        format.html do
+          redirect_to game_path(@game)
+          format.json { render json: @card, status: 200 }
+        end
       else
+        format.html { render :new }
         format.json { render json: @card.errors, status: :unprocessable_entity }
       end
     end
