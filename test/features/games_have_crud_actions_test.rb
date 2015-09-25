@@ -8,4 +8,12 @@ feature "Games have crud actions" do
     # Existing games should be listed
     page.must_have_content "Tigers VS. Lions"
   end
+
+  scenario "create games" do
+    # Given a new game form
+    sign_in
+    visit new_game_path
+    # When I submit a valid form
+    # A game should be created
+  end
 end
