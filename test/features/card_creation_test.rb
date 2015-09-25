@@ -26,7 +26,6 @@ feature "Creating Cards" do
     # When click on 'book player' and submit invalid params
     click_on 'Book A Player'
 
-    puts page.text
     select 'Yellow', :from => 'card_color'
     fill_in 'Comments', with: ''
     click_on 'Create Card'

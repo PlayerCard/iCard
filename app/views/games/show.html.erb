@@ -22,7 +22,7 @@
   <% @game.teams.last.line_up.each do |player| %>
     <div>
     <%= link_to profile_path player do %>
-      <%= image_tag player.profile.picture.url(:large) %>
+      <%= image_tag player.profile.picture.url(:thumb) %>
     <% end %>
     <%= player.profile.name %>
     <% if current_user.present? && current_user.profile.role == "referee"%>
@@ -37,7 +37,7 @@
   <% @game.teams.first.line_up.each do |player| %>
     <div>
     <%= link_to profile_path player do %>
-      <%= image_tag player.profile.picture.url(:large) %>
+      <%= image_tag player.profile.picture.url(:thumb) %>
     <% end %>
     <%= player.profile.name %>
     <% if current_user.present? && current_user.profile.role == "referee" %>
