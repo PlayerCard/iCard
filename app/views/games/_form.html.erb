@@ -10,11 +10,18 @@
       </ul>
     </div>
   <% end %>
+  <% if params[:action] == "edit" %>
+    <div class="field">
+      <%= f.label :teams, "Teams" %><br />
+      <%= f.select :team_ids, options_for_select(@teams.map{|team| [team.name, team.id]}, selected: [@game.teams.last.id, @game.teams.first.id]), {}, {multiple: true, size: 8} %>
+    </div>
+  <% else %>
+    <div class="field">
+      <%= f.label :teams, "Teams" %><br />
+      <%= f.select :team_ids, options_for_select(@teams.map{|team| [team.name, team.id]}), {}, {multiple: true, size: 8} %>
+    </div>
+  <% end %>
 
-  <div class="field">
-    <%= f.label :teams, "Teams" %><br />
-    <%= f.select :team_ids, options_for_select(@teams.map{|team| [team.name, team.id]}, selected: [@game.teams.last.id, @game.teams.first.id]), {}, {multiple: true, size: 8} %>
-  </div>
   <div class="field">
     <%= f.label :game_time %><br />
     <%= datetime_select :game, :game_time %>
