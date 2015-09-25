@@ -1,6 +1,5 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :update, :edit, :destroy]
-  before_action :set_league, only: []
   before_action :set_teams, only: [:show, :new, :index, :edit, :update]
   before_action :set_referees, only: [:new, :edit, :update]
 
@@ -41,10 +40,6 @@ class GamesController < ApplicationController
   end
 
   private
-
-  def set_league
-    @league = League.find(params[:id])
-  end
 
   def set_game
     @game = Game.find(params[:id])

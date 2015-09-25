@@ -1,6 +1,6 @@
 class Profile < ActiveRecord::Base
   belongs_to :user
-  validates :role, presence: true
+  validates :role, :name, presence: true
   has_attached_file :picture, styles: {
     large: "500x500#",
     medium: "300x300#",
