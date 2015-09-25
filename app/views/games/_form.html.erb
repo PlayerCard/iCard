@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :teams, "Teams" %><br />
-    <%= f.select :team_ids, options_for_select(@teams.map{|team| [team.name, team.id]}), {}, {multiple: true, size: 8} %>
+    <%= f.select :team_ids, options_for_select(@teams.map{|team| [team.name, team.id]}, selected: [@game.teams.last.id, @game.teams.first.id]), {}, {multiple: true, size: 8} %>
   </div>
   <div class="field">
     <%= f.label :game_time %><br />
@@ -27,6 +27,20 @@
     <%= f.label :referee %><br />
     <%= f.select :referee_id, options_for_select(@referees.map{|ref| [ref.profile.name, ref.id]})%>
   </div>
+
+
+  <% if params[:action] == "edit" %>
+    <div class="field">
+      <%= f.label :home_players %><br />
+      <%= f.select :home_player_ids, options_for_select(@game.teams.first.line_up.map{|player| [player.profile.name, player.id, selected: true]}), {}, {multiple: true, size: 18} %>
+    </div>
+
+    <div class="field">
+      <%= f.label :away_players %><br />
+      <%= f.select :away_player_ids, options_for_select(@game.teams.last.line_up.map{|player| [player.profile.name, player.id, selected: true]}), {}, {multiple: true, size: 18} %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
