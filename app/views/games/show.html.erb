@@ -1,9 +1,13 @@
 <div class="container">
-  <p><%= link_to 'Back', games_path %>|
-  <p><%= link_to 'Edit', edit_game_path(@game) %></p>
-  <h2>
+  <p>
+    <%= link_to 'Back', games_path %> |
+    <%= link_to 'Edit', edit_game_path(@game) %> |
+    <%= link_to 'Delete', @game, method: :delete,
+              data: {confirm: "Are you sure?"}%>
+  </p>
+  <h1>
     <%= link_to @game.teams.last.name, @game.teams.last %> @ <%= link_to @game.teams.first.name, @game.teams.first %>
-  </h2>
+  </h1>
 
     <%= link_to 'Book A Player', new_game_card_path(@game.id) %>
 
@@ -12,15 +16,14 @@
     Start Time:  <%= @game.game_time.strftime("%-d/%-m/%y: %H:%M") %> <br/>
     Referee:  <%= @game.referee.profile.name %>
   </p>
-  <div class="team_titles">
-    <%= link_to @game.teams.first.name, @game.teams.first %>
-    <%= link_to @game.teams.last.name, @game.teams.last %>
-  </div>
 
   <div class="row">
     <div class="team away col-md-6">
+
+      <h3><%= link_to @game.teams.last.name, @game.teams.last %></h3>
+
       <% @game.teams.last.line_up.each do |player| %>
-        <div>
+        <div class="player">
         <%= link_to profile_path player do %>
           <%= image_tag player.profile.picture.url(:thumb) %>
         <% end %>
@@ -33,8 +36,11 @@
     </div>
 
     <div class="team home col-md-6">
+
+      <h3><%= link_to @game.teams.first.name, @game.teams.first %></h3>
+
       <% @game.teams.first.line_up.each do |player| %>
-        <div>
+        <div class="player">
         <%= link_to profile_path player do %>
           <%= image_tag player.profile.picture.url(:thumb) %>
         <% end %>
