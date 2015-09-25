@@ -16,7 +16,7 @@
 
   <div class="field">
   <%= f.label :player_id %>
-  <%= f.select :player_id, options_for_select(@game.teams.first.line_up.map{|player| [player.profile.name, player.id]}), {}%>
+  <%= f.select :player_id, options_for_select(@game.teams.first.line_up.map{|player| [player.profile.name, player.id]}), {include_blank: 'Select A Player'} %>
   </div>
   <div class="field">
     <%= f.label :color %><br />

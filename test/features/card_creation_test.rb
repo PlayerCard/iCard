@@ -7,12 +7,14 @@ feature "Creating Cards" do
     # When I click 'Book Player' and fill out the form
     game = games(:game1)
     visit game_path(game)
-    first("a[href='/games/#{game.id}/cards/new']").click
-    fill_in 'Color', with: 'Yellow'
+    click_on 'Book A Player'
+
+    select 'Alvina Bechtelar', :from => 'card_player_id'
+    select 'Yellow', :from => 'card_color'
     fill_in 'Comments', with: 'Did some not cool stuff'
     click_on 'Create Card'
     # Then a player should get booked
-    page.text.must_contain 'Player successfully booked with Yellow Card'
+    page.text.must_include 'Player successfully booked'
   end
 
 
@@ -22,12 +24,14 @@ feature "Creating Cards" do
     game = games(:game1)
     visit game_path(game)
     # When click on 'book player' and submit invalid params
-    first("a[href='/games/#{game.id}/cards/new']").click
-    fill_in 'Color', with: 'Green'
+    click_on 'Book A Player'
+
+    puts page.text
+    select 'Yellow', :from => 'card_color'
     fill_in 'Comments', with: ''
     click_on 'Create Card'
     # Then the player shouldn't be booked
-    page.text.must_contain 'error'
+    page.text.must_include 'error'
   end
 
 
