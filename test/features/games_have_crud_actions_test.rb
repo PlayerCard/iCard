@@ -18,9 +18,21 @@ feature "Games have crud actions" do
     select('Bears', from: 'game_team_ids')
     fill_in "Game location", with: "Narnia"
     click_on "Create Game"
-    # A game should be created
+    # Then a game should be created
     page.must_have_content "Game was successfully created."
     page.must_have_content "Bears @ Tigers"
+    page.must_have_content "Location: Narnia"
+  end
+
+  scenario "update games" do
+    # Given an existing game edit page
+    sign_in
+    visit edit_game_path(games(:game1))
+    # When I submit a valid form
+    fill_in "Game location", with: "Narnia"
+    click_on "Update Game"
+    # Then the game should be updated
+    page.must_have_content "Game was successfully updated."
     page.must_have_content "Location: Narnia"
   end
 end
