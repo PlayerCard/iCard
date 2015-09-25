@@ -6,14 +6,10 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new(game_params)
-    respond_to do |format|
-      if @game.save
-        format.html { redirect_to @game, notice: 'Game was successfully created.' }
-        format.json { render :show, status: :created, location: @game }
-      else
-        format.html { render :new }
-        format.json { render json: @game.errors, status: :unprocessable_entity }
-      end
+    if @game.save
+      redirect_to @game, notice: 'Game was successfully created.'
+    else
+      render :new
     end
   end
 
@@ -29,14 +25,10 @@ class GamesController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @game.update(game_params)
-        format.html { redirect_to @game, notice: 'Game was successfully updated.' }
-        format.json { render :show, status: :ok, location: @game }
-      else
-        format.html { render :edit }
-        format.json { render json: @game.errors, status: :unprocessable_entity }
-      end
+    if @game.update(game_params)
+      redirect_to @game, notice: 'Game was successfully updated.'
+    else
+      render :edit
     end
   end
 
@@ -45,10 +37,7 @@ class GamesController < ApplicationController
 
   def destroy
     @game.delete
-    respond_to do |format|
-      format.html { redirect_to league_games_path, notice: 'Post was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to league_games_path, notice: 'Post was successfully destroyed.'
   end
 
   private
