@@ -1,69 +1,259 @@
 admin_profile:
   user: admin
   name: Super Rad Soccer League
-  address_1: Faker::Address.street_address
-  address_2: Faker::Address.secondary_address
-  city: Faker::Address.city
-  state: Faker::Address.state_abbr
-  zip: Faker::Address.zip
+  address_1: 123 Fake Street
+  address_2: Apt 4
+  city: Seattle
+  state: WA
+  zip: '98104'
   role: admin
 
 player_1_profile:
   user: player_1
-  name: Faker::Name.name
-  address_1: Faker::Address.street_address
-  address_2: Faker::Address.secondary_address
-  city: Faker::Address.city
-  state: Faker::Address.state_abbr
-  zip: Faker::Address.zip
+  name: John Nortz
+  address_1: 123 Fake Street
+  address_2: Apt 4
+  city: Seattle
+  state: WA
+  zip: '98104'
   role: player
 
 player_2_profile:
   user: player_2
-  name: Faker::Name.name
-  address_1: Faker::Address.street_address
-  address_2: Faker::Address.secondary_address
-  city: Faker::Address.city
-  state: Faker::Address.state_abbr
-  zip: Faker::Address.zip
+  name: Kevin Townsend
+  address_1: 123 Fake Street
+  address_2: Apt 4
+  city: Seattle
+  state: WA
+  zip: '98104'
   role: player
 
 player_3_profile:
   user: player_3
-  name: Faker::Name.name
-  address_1: Faker::Address.street_address
-  address_2: Faker::Address.secondary_address
-  city: Faker::Address.city
-  state: Faker::Address.state_abbr
-  zip: Faker::Address.zip
+  name: Matt Yang
+  address_1: 123 Fake Street
+  address_2: Apt 4
+  city: Seattle
+  state: WA
+  zip: '98104'
   role: player
 
 player_4_profile:
   user: player_4
-  name: Faker::Name.name
-  address_1: Faker::Address.street_address
-  address_2: Faker::Address.secondary_address
-  city: Faker::Address.city
-  state: Faker::Address.state_abbr
-  zip: Faker::Address.zip
+  name: Clint Dempsey
+  address_1: 123 Fake Street
+  address_2: Apt 4
+  city: Seattle
+  state: WA
+  zip: '98104'
+  role: player
+
+player_5_profile:
+  user: player_5
+  name: Matt
+  address_1: 123 Fake Street
+  address_2: Apt 4
+  city: Seattle
+  state: WA
+  zip: '98104'
+  role: player
+
+player_6_profile:
+  user: player_6
+  name: Matt
+  address_1: 123 Fake Street
+  address_2: Apt 4
+  city: Seattle
+  state: WA
+  zip: '98104'
+  role: player
+
+player_7_profile:
+  user: player_7
+  name: Matt
+  address_1: 123 Fake Street
+  address_2: Apt 4
+  city: Seattle
+  state: WA
+  zip: '98104'
+  role: player
+
+player_8_profile:
+  user: player_8
+  name: Matt
+  address_1: 123 Fake Street
+  address_2: Apt 4
+  city: Seattle
+  state: WA
+  zip: '98104'
+  role: player
+
+player_9_profile:
+  user: player_9
+  name: Matt
+  address_1: 123 Fake Street
+  address_2: Apt 4
+  city: Seattle
+  state: WA
+  zip: '98104'
+  role: player
+
+player_10_profile:
+  user: player_10
+  name: Matt
+  address_1: 123 Fake Street
+  address_2: Apt 4
+  city: Seattle
+  state: WA
+  zip: '98104'
+  role: player
+
+player_11_profile:
+  user: player_11
+  name: Matt
+  address_1: 123 Fake Street
+  address_2: Apt 4
+  city: Seattle
+  state: WA
+  zip: '98104'
+  role: player
+
+player_12_profile:
+  user: player_12
+  name: Matt
+  address_1: 123 Fake Street
+  address_2: Apt 4
+  city: Seattle
+  state: WA
+  zip: '98104'
+  role: player
+
+player_13_profile:
+  user: player_13
+  name: Matt
+  address_1: 123 Fake Street
+  address_2: Apt 4
+  city: Seattle
+  state: WA
+  zip: '98104'
+  role: player
+
+player_14_profile:
+  user: player_14
+  name: Matt
+  address_1: 123 Fake Street
+  address_2: Apt 4
+  city: Seattle
+  state: WA
+  zip: '98104'
+  role: player
+
+player_15_profile:
+  user: player_15
+  name: Matt
+  address_1: 123 Fake Street
+  address_2: Apt 4
+  city: Seattle
+  state: WA
+  zip: '98104'
+  role: player
+
+player_16_profile:
+  user: player_16
+  name: Matt
+  address_1: 123 Fake Street
+  address_2: Apt 4
+  city: Seattle
+  state: WA
+  zip: '98104'
+  role: player
+
+player_17_profile:
+  user: player_17
+  name: Matt
+  address_1: 123 Fake Street
+  address_2: Apt 4
+  city: Seattle
+  state: WA
+  zip: '98104'
+  role: player
+
+player_18_profile:
+  user: player_18
+  name: Matt
+  address_1: 123 Fake Street
+  address_2: Apt 4
+  city: Seattle
+  state: WA
+  zip: '98104'
+  role: player
+
+player_19_profile:
+  user: player_19
+  name: Matt
+  address_1: 123 Fake Street
+  address_2: Apt 4
+  city: Seattle
+  state: WA
+  zip: '98104'
+  role: player
+
+player_20_profile:
+  user: player_20
+  name: Matt
+  address_1: 123 Fake Street
+  address_2: Apt 4
+  city: Seattle
+  state: WA
+  zip: '98104'
+  role: player
+
+player_21_profile:
+  user: player_21
+  name: Matt
+  address_1: 123 Fake Street
+  address_2: Apt 4
+  city: Seattle
+  state: WA
+  zip: '98104'
+  role: player
+
+player_22_profile:
+  user: player_22
+  name: Matt
+  address_1: 123 Fake Street
+  address_2: Apt 4
+  city: Seattle
+  state: WA
+  zip: '98104'
+  role: player
+
+player_23_profile:
+  user: player_23
+  name: Left out
+  address_1: 123 Fake Street
+  address_2: Apt 4
+  city: Seattle
+  state: WA
+  zip: '98104'
   role: player
 
 ref_1_profile:
   user: ref_1
-  name: Faker::Name.name
-  address_1: Faker::Address.street_address
-  address_2: Faker::Address.secondary_address
-  city: Faker::Address.city
-  state: Faker::Address.state_abbr
-  zip: Faker::Address.zip
+  name: Ronald Kinch
+  address_1: 123 Fake Street
+  address_2: Apt 4
+  city: Seattle
+  state: WA
+  zip: '98104'
   role: referee
 
 ref_2_profile:
   user: ref_2
-  name: Faker::Name.name
-  address_1: Faker::Address.street_address
-  address_2: Faker::Address.secondary_address
-  city: Faker::Address.city
-  state: Faker::Address.state_abbr
-  zip: Faker::Address.zip
+  name: Brook Riggio
+  address_1: 123 Fake Street
+  address_2: Apt 4
+  city: Seattle
+  state: WA
+  zip: '98104'
   role: referee
