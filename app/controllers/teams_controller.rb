@@ -43,6 +43,7 @@ class TeamsController < ApplicationController
   # PATCH/PUT /teams/1
   # PATCH/PUT /teams/1.json
   def update
+    puts team_params
     if @team.update(team_params)
       redirect_to @team, notice: 'Team was successfully updated.'
     else
@@ -68,6 +69,6 @@ class TeamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
-      params.require(:team).permit(:name, team_memberships: [:id, :player_id, :in_line_up, :is_manager])
+      params.require(:team).permit(:name, team_memberships_attributes: [:id, :player_id, :in_line_up])
     end
 end

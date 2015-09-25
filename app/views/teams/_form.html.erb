@@ -11,11 +11,12 @@
     </div>
   <% end %>
 
+  <h3>Edit lineup</h3>
   <%= f.fields_for :team_memberships do |builder| %>
-    <%= builder.object.user.profile.name %>
+    <p><%= builder.object.user.profile.name %>
 
     <%= builder.label :in_line_up %>
-    <%= builder.check_box :in_line_up %>
+    <%= builder.check_box :in_line_up %></p>
   <% end %>
 
   <div class="actions">
