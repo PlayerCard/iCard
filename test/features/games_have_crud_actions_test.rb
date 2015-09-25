@@ -14,6 +14,13 @@ feature "Games have crud actions" do
     sign_in
     visit new_game_path
     # When I submit a valid form
+    select('Tigers', from: 'game_team_ids')
+    select('Bears', from: 'game_team_ids')
+    fill_in "Game location", with: "Narnia"
+    click_on "Create Game"
     # A game should be created
+    page.must_have_content "Game was successfully created."
+    page.must_have_content "Bears @ Tigers"
+    page.must_have_content "Location: Narnia"
   end
 end
