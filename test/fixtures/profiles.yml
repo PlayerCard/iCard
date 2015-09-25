@@ -230,7 +230,7 @@ player_22_profile:
 
 player_23_profile:
   user: player_23
-  name: Clint
+  name: Left out
   address_1: Faker::Address.street_address
   address_2: Faker::Address.secondary_address
   city: Faker::Address.city
