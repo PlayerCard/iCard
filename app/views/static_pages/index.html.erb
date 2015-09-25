@@ -1,15 +1,15 @@
-<h1>Welcome to Player Card</h1>
+<main>
+  <nav class="main_nav">
+    <h1>Welcome to Player Card</h1>
 
-<h2><%= @league.name %></h2>
+    <h2><%= @league.name %></h2>
 
-<p><%= link_to "Teams", teams_path %></p>
-<p><%= link_to "Users", profiles_path %></p>
-<p><%= link_to "Games", games_path %></p>
-
-<p><% if current_user.present? %>
-  <% if current_user.profile.nil? %>
-    Create <%= link_to 'Profile', new_profile_path %>
-  <% else %>
-    Return to <%= link_to 'Profile', profile_path(current_user.profile) %>
-  <% end %>
-<% end %></p>
+    <p><% if current_user.present? %>
+      <% if current_user.profile.nil? %>
+        Create <%= link_to 'Profile', new_profile_path %>
+      <% else %>
+        Return to <%= link_to 'Profile', profile_path(current_user.profile) %>
+      <% end %>
+    <% end %></p>
+  </nav>
+</main>
