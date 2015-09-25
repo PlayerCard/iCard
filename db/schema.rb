@@ -39,9 +39,9 @@ ActiveRecord::Schema.define(version: 20150924231740) do
 
   create_table "games", force: :cascade do |t|
     t.string   "game_location"
+    t.integer  "referee_id",    null: false
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.integer  "referee_id"
     t.datetime "game_time"
   end
 
