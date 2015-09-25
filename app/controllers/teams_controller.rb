@@ -45,7 +45,7 @@ class TeamsController < ApplicationController
   def update
     in_lineup = params[:team][:team_memberships_attributes]
     lineup_count = 0
-    in_lineup.each { |player| lineup_count += 1 if player[1][:in_line_up] == '1'}
+    in_lineup.each { |player| lineup_count += 1 if player[1][:in_line_up] == '1' }
     if lineup_count > 20
       flash.now[:alert] = "Cannot select more than 20 players for lineup, you selected #{lineup_count}."
       render :edit
@@ -69,13 +69,14 @@ class TeamsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_team
-      @team = Team.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def team_params
-      params.require(:team).permit(:name, team_memberships_attributes: [:id, :player_id, :in_line_up])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_team
+    @team = Team.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def team_params
+    params.require(:team).permit(:name, team_memberships_attributes: [:id, :player_id, :in_line_up])
+  end
 end

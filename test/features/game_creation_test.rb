@@ -1,7 +1,6 @@
 require "test_helper"
 
 feature "Creating Games" do
-
   # Following tests for admin role - not yet implemented
 
   # scenario "League can create new games" do
