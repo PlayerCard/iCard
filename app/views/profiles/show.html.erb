@@ -4,7 +4,9 @@
 
 <p><strong>Cards list</strong></p>
 <% @cards.each do |card| %>
-  <p><%= link_to card.color, game_path(card.game) %> | <%= card.created_at.strftime("Issued on %m/%d/%y") %></p>
+  <p><span class="<%= card.color %>">
+  <%= link_to card.color, game_path(card.game) %></span>
+  | <%= card.created_at.strftime("Issued on %m/%d/%y") %></p>
   <p><%= card.comments %></p>
 <% end %>
 
