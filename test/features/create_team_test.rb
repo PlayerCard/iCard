@@ -20,7 +20,7 @@ feature "Teams have crud actions" do
     sign_in
     visit teams_path
     click_on "Tigers"
-    click_on "Edit"
+    click_on "Edit team and lineup"
     # When I update a field and submit
     fill_in "Name", with: "Leopards"
     click_on "Update Team"
@@ -38,5 +38,23 @@ feature "Teams have crud actions" do
     # The team should be deleted
     page.must_have_content "Team was successfully deleted."
     page.wont_have_content "Lions"
+  end
+
+  scenario "edit lineup and submit successfully" do
+    visit teams_path
+    click_on "Tigers"
+    click_on "Edit team and lineup"
+    uncheck "team_team_memberships_attributes_0_in_line_up"
+    click_on "Update Team"
+    page.must_have_content "Team was successfully updated."
+  end
+
+  scenario "submit lineup with too many players gives error" do
+    visit teams_path
+    click_on "Tigers"
+    click_on "Edit team and lineup"
+    check "team_team_memberships_attributes_5_in_line_up"
+    click_on "Update Team"
+    page.must_have_content "Cannot select more than 20 players for lineup, you selected 21."
   end
 end

@@ -22,6 +22,82 @@ player_4:
   email: user4@example.com
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
 
+player_5:
+  email: user5@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
+player_6:
+  email: user6@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
+player_7:
+  email: user7@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
+player_8:
+  email: user8@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
+player_9:
+  email: user9@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
+player_10:
+  email: user10@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
+player_11:
+  email: user11@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
+player_12:
+  email: user12@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
+player_13:
+  email: user13@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
+player_14:
+  email: user14@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
+player_15:
+  email: user15@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
+player_16:
+  email: user16@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
+player_17:
+  email: user17@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
+player_18:
+  email: user18@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
+player_19:
+  email: user19@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
+player_20:
+  email: user20@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
+player_21:
+  email: user21@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
+player_22:
+  email: user22@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
+player_23:
+  email: user23@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
 ref_1:
   email: ref1@example.com
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>

@@ -2,22 +2,136 @@ team_member1:
   user: player_1
   team: lions
   in_line_up: true
-  is_manager: false
+  is_manager: true
 
 team_member2:
   user: player_2
   team: lions
   in_line_up: true
-  is_manager: true
+  is_manager: false
 
 team_member3:
   user: player_3
   team: tigers
   in_line_up: true
-  is_manager: false
+  is_manager: true
 
 team_member4:
   user: player_4
   team: tigers
   in_line_up: true
+  is_manager: false
+
+team_member5:
+  user: player_5
+  team: tigers
+  in_line_up: true
+  is_manager: false
+
+team_member6:
+  user: player_6
+  team: tigers
+  in_line_up: true
   is_manager: true
+
+team_member7:
+  user: player_7
+  team: tigers
+  in_line_up: true
+  is_manager: false
+
+team_member8:
+  user: player_8
+  team: tigers
+  in_line_up: true
+  is_manager: true
+
+team_member9:
+  user: player_9
+  team: tigers
+  in_line_up: true
+  is_manager: false
+
+team_member10:
+  user: player_10
+  team: tigers
+  in_line_up: true
+  is_manager: true
+
+team_member11:
+  user: player_11
+  team: tigers
+  in_line_up: true
+  is_manager: false
+
+team_member12:
+  user: player_12
+  team: tigers
+  in_line_up: true
+  is_manager: true
+
+team_member13:
+  user: player_13
+  team: tigers
+  in_line_up: true
+  is_manager: false
+
+team_member14:
+  user: player_14
+  team: tigers
+  in_line_up: true
+  is_manager: true
+
+team_member15:
+  user: player_15
+  team: tigers
+  in_line_up: true
+  is_manager: false
+
+team_member16:
+  user: player_16
+  team: tigers
+  in_line_up: true
+  is_manager: true
+
+team_member17:
+  user: player_17
+  team: tigers
+  in_line_up: true
+  is_manager: false
+
+team_member18:
+  user: player_18
+  team: tigers
+  in_line_up: true
+  is_manager: true
+
+team_member19:
+  user: player_19
+  team: tigers
+  in_line_up: true
+  is_manager: false
+
+team_member20:
+  user: player_20
+  team: tigers
+  in_line_up: true
+  is_manager: true
+
+team_member21:
+  user: player_21
+  team: tigers
+  in_line_up: true
+  is_manager: false
+
+team_member22:
+  user: player_22
+  team: tigers
+  in_line_up: true
+  is_manager: true
+
+team_member23:
+  user: player_23
+  team: tigers
+  in_line_up: false
+  is_manager: false
