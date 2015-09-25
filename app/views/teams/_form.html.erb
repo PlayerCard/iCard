@@ -11,6 +11,13 @@
     </div>
   <% end %>
 
+  <%= f.fields_for :team_memberships do |builder| %>
+    <%= builder.object.user.profile.name %>
+
+    <%= builder.label :in_line_up %>
+    <%= builder.check_box :in_line_up %>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
