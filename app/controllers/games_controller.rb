@@ -4,51 +4,40 @@ class GamesController < ApplicationController
   before_action :set_teams, only: [:show, :new, :index, :edit, :update]
   before_action :set_referees, only: [:new, :edit, :update]
 
-  def create
-    @game = Game.new(game_params)
-    respond_to do |format|
-      if @game.save
-        format.html { redirect_to @game, notice: 'Game was successfully created.' }
-        format.json { render :show, status: :created, location: @game }
-      else
-        format.html { render :new }
-        format.json { render json: @game.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   def index
     @games = Game.all
+  end
+
+  def show
   end
 
   def new
     @game = Game.new
   end
 
+  def create
+    @game = Game.new(game_params)
+    if @game.save
+      redirect_to @game, notice: 'Game was successfully created.'
+    else
+      render :new
+    end
+  end
+
   def edit
   end
 
   def update
-    respond_to do |format|
-      if @game.update(game_params)
-        format.html { redirect_to @game, notice: 'Game was successfully updated.' }
-        format.json { render :show, status: :ok, location: @game }
-      else
-        format.html { render :edit }
-        format.json { render json: @game.errors, status: :unprocessable_entity }
-      end
+    if @game.update(game_params)
+      redirect_to @game, notice: 'Game was successfully updated.'
+    else
+      render :edit
     end
-  end
-
-  def show
   end
 
   def destroy
     @game.delete
-    respond_to do |format|
-      format.html { redirect_to league_games_path, notice: 'Post was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to games_path, notice: 'Game was successfully deleted.'
   end
 
   private
