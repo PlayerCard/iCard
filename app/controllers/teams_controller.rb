@@ -45,7 +45,7 @@ class TeamsController < ApplicationController
   def update
     in_lineup = params[:team][:team_memberships_attributes]
     lineup_count = 0
-    in_lineup.each { |player| lineup_count += 1 if player[1][:in_line_up] == '1'}
+    in_lineup.each { |player| lineup_count += 1 if player[1][:in_line_up] == '1' }
     if lineup_count > 20
       flash.now[:alert] = "Cannot select more than 20 players for lineup, you selected #{lineup_count}."
       render :edit
