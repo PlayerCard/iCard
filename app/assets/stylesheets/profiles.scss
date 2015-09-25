@@ -1,3 +1,32 @@
-// Place all the styles related to the Profiles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.player {
+  float: left;
+  width: 49%;
+  display: block;
+  padding: 0;
+  padding-bottom: 10px;
+
+  &:hover {
+    background: white;
+  }
+
+  &:nth-child(even) {
+    margin-right: 1%;
+    clear: left;
+  }
+
+  .player_image {
+    width: 40%;
+    float: left;
+    
+    img {
+      display: block;
+      position: relative;
+      top: 0;
+      margin: 0 auto;
+    }
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+}

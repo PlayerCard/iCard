@@ -1,27 +1,31 @@
 <% @profiles.each do |profile| %>
-  <p>
-    <%= image_tag profile.picture.url(:thumb) %>
-    
-    <div>
-      <%= link_to "#{profile.name}", profile_path(profile.user) %>
+  <%= link_to profile_path(profile.user), class: "player clearfix" do %>
+    <div class="player_image">
+      <%= image_tag profile.picture.url(:thumb) %>
     </div>
-    <div>
+    
+    <div class="left">
+      <h2>
+        <%= profile.name %>
+      </h2>
+      
       <%= profile.role %>
-    </div>
-    <div>
-      <%= "member: " if profile.user.teams.length > 0 %>   
-      <% profile.user.teams.each do |team| %>
-        <%= team.name %>
-      <% end %>
-    </div>
-    
-    <div>
-      <%= "team manager: " if profile.user.team_memberships.map {|tm| tm.is_manager }.include?(true) %>
-      <% profile.user.team_memberships.each do |player| %>
-        <% if player.is_manager %>
-          <%= player.team.name %>
+
+      <div>
+        <%= "member: " if profile.user.teams.length > 0 %>   
+        <% profile.user.teams.each do |team| %>
+          <%= team.name %>
         <% end %>
-      <% end %>
+      </div>
+      
+      <div>
+        <%= "team manager: " if profile.user.team_memberships.map {|tm| tm.is_manager }.include?(true) %>
+        <% profile.user.team_memberships.each do |player| %>
+          <% if player.is_manager %>
+            <%= player.team.name %>
+          <% end %>
+        <% end %>
+      </div>
     </div>
-  </p>
+  <% end %>
 <% end %>
