@@ -4,6 +4,14 @@ class GamesController < ApplicationController
   before_action :set_teams, only: [:show, :new, :index, :edit, :update]
   before_action :set_referees, only: [:new, :edit, :update]
 
+  def index
+    @games = Game.all
+  end
+
+  def new
+    @game = Game.new
+  end
+
   def create
     @game = Game.new(game_params)
     if @game.save
@@ -11,14 +19,6 @@ class GamesController < ApplicationController
     else
       render :new
     end
-  end
-
-  def index
-    @games = Game.all
-  end
-
-  def new
-    @game = Game.new
   end
 
   def edit
