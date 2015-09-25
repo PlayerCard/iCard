@@ -1,6 +1,7 @@
 class CardsController < ApplicationController
   before_action :set_game, only: [:new, :create]
 
+
   def new
     @card = Card.new
   end
@@ -11,11 +12,11 @@ class CardsController < ApplicationController
     respond_to do |format|
       if @card.save
         format.html do
-          redirect_to game_path(@game)
+          redirect_to game_path(@game), notice: 'Player successfully booked'
           format.json { render json: @card, status: 200 }
         end
       else
-        format.html { render :new }
+        format.html { render :new, notice: 'Error creating card'}
         format.json { render json: @card.errors, status: :unprocessable_entity }
       end
     end
