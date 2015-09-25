@@ -1,6 +1,6 @@
-# App Title
+# iCard
 
-iCard
+[![Code Climate](https://codeclimate.com/repos/56059916e30ba028f7000d04/badges/139956a150be5a7a7e7d/gpa.svg)](https://codeclimate.com/repos/56059916e30ba028f7000d04/feed)
 
 By Team iCard.
 
