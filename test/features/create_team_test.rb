@@ -20,7 +20,7 @@ feature "Teams have crud actions" do
     sign_in
     visit teams_path
     click_on "Tigers"
-    click_on "Edit"
+    click_on "Edit team and lineup"
     # When I update a field and submit
     fill_in "Name", with: "Leopards"
     click_on "Update Team"
@@ -38,5 +38,12 @@ feature "Teams have crud actions" do
     # The team should be deleted
     page.must_have_content "Team was successfully deleted."
     page.wont_have_content "Lions"
+  end
+
+  scenario "edit lineup and submit successfully " do
+    visit teams_path
+    click_on "Tigers"
+    click_on "Edit team and lineup"
+    save_and_open_page
   end
 end
