@@ -43,7 +43,6 @@ class TeamsController < ApplicationController
   # PATCH/PUT /teams/1
   # PATCH/PUT /teams/1.json
   def update
-    puts team_params
     if @team.update(team_params)
       redirect_to @team, notice: 'Team was successfully updated.'
     else
