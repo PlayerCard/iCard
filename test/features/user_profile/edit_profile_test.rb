@@ -5,9 +5,9 @@ feature "Edit A Profile" do
     sign_in(:player_1)
     visit profile_path(profiles(:player_1_profile))
     click_on "Edit"
-    # fill_in "Title", with: "Becoming a Web Developer"
-    click_on "Update profile"
-    # page.text.must_include "profile was successfully updated"
-    # page.text.must_include "Web Developer"
+    fill_in "Name", with: "Stefan Frei"
+    click_on "Update Profile"
+    page.must_have_content "Profile was successfully updated"
+    page.must_have_content "Stefan Frei"
   end
 end
