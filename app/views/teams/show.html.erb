@@ -1,5 +1,7 @@
 <h1><%= @team.name %></h1>
 
+<p><strong><%= link_to 'Edit team and lineup', edit_team_path(@team) %></strong></p>
+
 <table>
   <tr>
     <th><strong>Managers</strong></th>
@@ -12,10 +14,19 @@
 </table>
 
 <table>
+  <tr><strong>Current Lineup</strong></tr>
+  <% @current_lineup.each do |player| %>
+    <tr>
+      <td><%= link_to player.profile.name, profile_path(player) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<table>
   <tr>
-    <th><strong>Players</strong></th>
+    <th><strong>Players not in lineup</strong></th>
   </tr>
-  <% @players.each do |player| %>
+  <% @not_in_lineup.each do |player| %>
     <tr>
       <td><%= link_to player.user.profile.name, profile_path(player.user) %></td>
     </tr>

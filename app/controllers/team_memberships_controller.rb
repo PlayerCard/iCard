@@ -1,2 +1,3 @@
 class TeamMembershipsController < ApplicationController
+
 end
