@@ -69,3 +69,16 @@ end
 5.times do
   create_game
 end
+
+def create_card(color, comments, player, game)
+  card = Card.create(color: color, comments: comments, player: player, game: game)
+end
+
+200.times do
+  color = ['yellow', 'red', 'black'].sample
+  comments = "He/She was a naughty, naughty boy/girl"
+  player = User.joins(:profile).where(profiles: { role: 'player'}).to_a.sample
+  game = Game.all.to_a.sample
+
+  create_card(color, comments, player, game)
+end
