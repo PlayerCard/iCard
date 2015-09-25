@@ -1,6 +1,7 @@
 <% @profiles.each do |profile| %>
   <p>
     <%= image_tag profile.picture.url(:thumb) %>
+    
     <div>
       <%= link_to "#{profile.name}", profile_path(profile.user) %>
     </div>
